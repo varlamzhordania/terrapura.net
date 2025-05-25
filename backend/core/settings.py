@@ -65,7 +65,7 @@ INSTALLED_APPS += THIRD_PARTY_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    # 'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -226,17 +226,17 @@ REST_FRAMEWORK = {
 }
 
 # Channels Settings
-CHANNEL_LAYERS = {
-    'default': {
-        "BACKEND": "channels.layers.InMemoryChannelLayer"
-        # 'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        # 'CONFIG': {
-        #     "hosts": [env('REDIS_HOST', default='redis://localhost:6379')],
-        #     "capacity": 1000,  # 🔹 Increase buffer size to allow more messages
-        #     "expiry": 10,  # 🔹 Reduce expiry to clear old messages faster
-        # },
-    },
-}
+# CHANNEL_LAYERS = {
+#     'default': {
+#         "BACKEND": "channels.layers.InMemoryChannelLayer"
+#         # 'BACKEND': 'channels_redis.core.RedisChannelLayer',
+#         # 'CONFIG': {
+#         #     "hosts": [env('REDIS_HOST', default='redis://localhost:6379')],
+#         #     "capacity": 1000,  # 🔹 Increase buffer size to allow more messages
+#         #     "expiry": 10,  # 🔹 Reduce expiry to clear old messages faster
+#         # },
+#     },
+# }
 
 # Stripe
 STRIPE_SECRET_KEY = env("STRIPE_SECRET_KEY", default="sk_***")
@@ -253,8 +253,8 @@ if not DEBUG:
     CACHES = {
         'default': {
             # 'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
-            "BACKEND": "django.core.cache.backends.redis.RedisCache",
             # 'LOCATION': env('MEMCACHE_HOST', default='127.0.0.1:11211'),
+            "BACKEND": "django.core.cache.backends.redis.RedisCache",
             'LOCATION': env("REDIS_HOST"),  # Use the REDIS_HOST environment variable
         }
 
@@ -275,12 +275,12 @@ EMAIL_HOST_USER = env("EMAIL_HOST_USER", default="")
 EMAIL_HOST_PASSWORD = env("EMAIL_HOST_password", default="")
 
 # Uncomment if Using RabbitMQ
-RABBITMQ_HOST = env("RABBITMQ_HOST", default="")
-RABBITMQ_PORT = env("RABBITMQ_PORT", default="")
-RABBITMQ_USER = env("RABBITMQ_USER", default="")
-RABBITMQ_PASSWORD = env("RABBITMQ_PASSWORD", default="")
-RABBITMQ_QUEUE_NAME = env("RABBITMQ_QUEUE_NAME", default="")
-RABBITMQ_VHOST = env("RABBITMQ_VHOST", default="")
+# RABBITMQ_HOST = env("RABBITMQ_HOST", default="")
+# RABBITMQ_PORT = env("RABBITMQ_PORT", default="")
+# RABBITMQ_USER = env("RABBITMQ_USER", default="")
+# RABBITMQ_PASSWORD = env("RABBITMQ_PASSWORD", default="")
+# RABBITMQ_QUEUE_NAME = env("RABBITMQ_QUEUE_NAME", default="")
+# RABBITMQ_VHOST = env("RABBITMQ_VHOST", default="")
 
 CELERY_BROKER_URL = 'redis://redis:6379/0'
 CELERY_RESULT_BACKEND = 'redis://redis:6379/1'
