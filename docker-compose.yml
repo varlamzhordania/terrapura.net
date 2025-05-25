@@ -47,7 +47,6 @@ services:
     command: celery -A core worker --loglevel=info
     volumes:
       - ./backend:/home/terrapura
-      - ./stream:/opt/data/hls
     depends_on:
       - redis
     env_file:

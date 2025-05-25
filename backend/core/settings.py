@@ -29,23 +29,25 @@ ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['*'])
 
 LOCAL_APPS = [
     'account.apps.AccountConfig',
+    'main.apps.MainConfig',
 ]
 
 THIRD_PARTY_APPS = [
     # 'ckeditor',
     # 'django_ckeditor_5',
     # 'mptt',
-    # 'nested_admin',
+    'nested_admin',
+    'reversion',
     'rest_framework',
     'django_filters',
     'corsheaders',
     # "phonenumber_field",
-    # 'hijack',
-    # 'hijack.contrib.admin',
+    'hijack',
+    'hijack.contrib.admin',
 
     # 'rosetta', # translate panel
     # 'parler',  # translate models content
-    # 'import_export', # import and export via django panel
+    'import_export', # import and export via django panel
 ]
 
 INSTALLED_APPS = [
@@ -71,6 +73,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'hijack.middleware.HijackUserMiddleware',
 ]
 
 ROOT_URLCONF = 'core.urls'
