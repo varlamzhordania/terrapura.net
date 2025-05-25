@@ -1,0 +1,49 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Django-specific
+*.sqlite3
+*.log
+*.pot
+*.pyc
+local_settings.py
+.env
+*.env
+.env.*
+
+# Unit test / coverage
+.coverage
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+.pytest_cache/
+
+# Environment files
+*.env
+docker.env
+
+# Build and distribution
+build/
+dist/
+*.egg-info/
+
+# Node, npm, frontend stuff (if any)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Git and OS
+.git/
+.gitignore
+.DS_Store
+Thumbs.db
+
+# Media and static (optional if mounted separately)
+media/
+staticfiles/
