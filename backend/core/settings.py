@@ -36,8 +36,9 @@ THIRD_PARTY_APPS = [
     # 'django_ckeditor_5',
     # 'mptt',
     # 'nested_admin',
-    # 'rest_framework'
-    # 'corsheaders'
+    'rest_framework',
+    'django_filters',
+    'corsheaders',
     # "phonenumber_field",
     # 'hijack',
     # 'hijack.contrib.admin',
@@ -223,8 +224,6 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 25,
 
 }
-
-
 
 # Channels Settings
 CHANNEL_LAYERS = {

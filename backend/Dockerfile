@@ -6,7 +6,7 @@ ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
 
 # Set working directory
-WORKDIR /home/digitallive
+WORKDIR /home/terrapura
 
 # Install system dependencies (Including OpenCV dependencies)
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -18,8 +18,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Install pip dependencies
-COPY requirements.txt /home/digitallive/
+COPY requirements.txt /home/terrapura/
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
 # Copy the rest of the application code into the container
-COPY . /home/digitallive/
+COPY . /home/terrapura/

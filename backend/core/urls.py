@@ -29,8 +29,8 @@ urlpatterns = [
 ]
 
 urlpatterns += [
-    path("setlang/", set_language, name="set_language"),
-    # path('api-auth/', include('rest_framework.urls')),
+    # path("setlang/", set_language, name="set_language"),
+    path('api-auth/', include('rest_framework.urls')),
     # re_path(r'^rosetta/', include('rosetta.urls')),
     # path('hijack/', include('hijack.urls')),
     # path("ckeditor5/", include('django_ckeditor_5.urls')),
