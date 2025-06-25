@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from autoslug import AutoSlugField
 
-from core.models import BaseModel
+from core.models import BaseModel, UploadPath
 
 
 class Herb(BaseModel):
@@ -39,6 +39,12 @@ class Herb(BaseModel):
         null=True,
         help_text=_("Typical or recommended dosage."),
     )
+    image_link = models.CharField(
+        max_length=255,
+        verbose_name=_('Image Link'),
+        blank=True,
+        null=True,
+    )
     ailments = models.ManyToManyField(
         "Ailment",
         verbose_name=_('Ailments'),
@@ -71,9 +77,53 @@ class Herb(BaseModel):
         verbose_name = _('Herb')
         verbose_name_plural = _('Herbs')
         ordering = ('name',)
+        indexes = [
+            models.Index(fields=['name']),
+            models.Index(fields=['slug']),
+            models.Index(fields=['latin_name']),
+        ]
 
     def __str__(self):
         return f"{self.name} ({self.latin_name})" if self.latin_name else self.name
+
+
+class HerbMedia(BaseModel):
+    class TypeChoices(models.TextChoices):
+        IMAGE = 'IMAGE', _('Image')
+        VIDEO = 'VIDEO', _('Video')
+        DOCUMENT = 'DOCUMENT', _('Document')
+        OTHER = 'OTHER', _('Other')
+
+    herb = models.ForeignKey(
+        Herb,
+        verbose_name=_('Herb'),
+        on_delete=models.CASCADE,
+        related_name='medias',
+    )
+    file = models.FileField(
+        verbose_name=_('File'),
+        upload_to=UploadPath('herbs', 'medias'),
+        blank=True,
+        null=True,
+    )
+    type = models.CharField(
+        verbose_name=_('Type'),
+        choices=TypeChoices.choices,
+        default=TypeChoices.OTHER,
+        help_text=_('Type of the herb media'),
+    )
+
+    class Meta:
+        verbose_name = _('Herb Media')
+        verbose_name_plural = _('Herb Media')
+        ordering = ('herb', 'created_at')
+        indexes = [
+            models.Index(fields=['herb', 'order']),
+            models.Index(fields=['herb', 'created_at']),
+        ]
+
+    def __str__(self):
+        return f"{self.herb.name} - {self.file.name if self.file else 'none file'} - {self.created_at}"
 
 
 class HerbPreparationStep(BaseModel):
@@ -145,6 +195,10 @@ class HerbPreparationStep(BaseModel):
         verbose_name_plural = _('Preparation Steps')
         ordering = ('herb', 'order', 'name')
         unique_together = ('herb', 'name')
+        indexes = [
+            models.Index(fields=['herb', 'order']),
+            models.Index(fields=['herb', 'created_at']),
+        ]
 
     def __str__(self):
         return f"{self.herb.name} - {self.name} ({self.get_type_display()})"
@@ -207,6 +261,10 @@ class HerbWarning(BaseModel):
         verbose_name_plural = _('Herb Warnings')
         ordering = ('herb', 'order', 'name')
         unique_together = ('herb', 'name')
+        indexes = [
+            models.Index(fields=['herb', 'order']),
+            models.Index(fields=['herb', 'created_at']),
+        ]
 
     def __str__(self):
         return f"{self.herb.name} - {self.name} ({self.get_type_display()})"
@@ -251,6 +309,9 @@ class ScientificStudy(BaseModel):
         verbose_name = _('Scientific Study')
         verbose_name_plural = _('Scientific Studies')
         ordering = ('herb', 'title', 'created_at')
+        indexes = [
+            models.Index(fields=['herb', 'created_at']),
+        ]
 
     def __str__(self):
         return f"{self.herb.name} - {self.title}"
@@ -279,6 +340,10 @@ class Ailment(BaseModel):
         verbose_name = _('Ailment')
         verbose_name_plural = _('Ailments')
         ordering = ('name', 'created_at')
+        indexes = [
+            models.Index(fields=['name']),
+            models.Index(fields=['slug']),
+        ]
 
     def __str__(self):
         return self.name
@@ -313,6 +378,10 @@ class SideEffect(BaseModel):
         verbose_name = _('Side Effect')
         verbose_name_plural = _('Side Effects')
         ordering = ('name', 'created_at')
+        indexes = [
+            models.Index(fields=['name']),
+            models.Index(fields=['slug']),
+        ]
 
     def __str__(self):
         return self.name
@@ -340,6 +409,10 @@ class Source(BaseModel):
         verbose_name = _('Source')
         verbose_name_plural = _('Source')
         ordering = ('name', 'created_at')
+        indexes = [
+            models.Index(fields=['name']),
+            models.Index(fields=['url']),
+        ]
 
     def __str__(self):
         return f"{self.name} - {self.url}"
@@ -364,6 +437,10 @@ class Tag(BaseModel):
         verbose_name = _('Tag')
         verbose_name_plural = _('Tags')
         ordering = ('name', 'created_at')
+        indexes = [
+            models.Index(fields=['name']),
+            models.Index(fields=['slug']),
+        ]
 
     def __str__(self):
         return self.name
