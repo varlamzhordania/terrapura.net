@@ -30,6 +30,9 @@ ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['*'])
 LOCAL_APPS = [
     'account.apps.AccountConfig',
     'main.apps.MainConfig',
+    'herbs.apps.HerbsConfig',
+    'inventory.apps.InventoryConfig',
+    'partners.apps.PartnersConfig',
 ]
 
 THIRD_PARTY_APPS = [
@@ -47,7 +50,7 @@ THIRD_PARTY_APPS = [
 
     # 'rosetta', # translate panel
     # 'parler',  # translate models content
-    'import_export', # import and export via django panel
+    'import_export',  # import and export via django panel
 ]
 
 INSTALLED_APPS = [

@@ -6,6 +6,8 @@ from .models import (
     ScientificStudy,
     Ailment,
     SideEffect,
+    Symptom,
+    Illness,
     Source,
     Tag,
 )
@@ -39,6 +41,16 @@ class AilmentResource(resources.ModelResource):
 class SideEffectResource(resources.ModelResource):
     class Meta:
         model = SideEffect
+
+
+class SymptomResource(resources.ModelResource):
+    class Meta:
+        model = Symptom
+
+
+class IllnessResource(resources.ModelResource):
+    class Meta:
+        model = Illness
 
 
 class SourceResource(resources.ModelResource):

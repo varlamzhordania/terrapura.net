@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+
 # from django.conf.urls.i18n import i18n_patterns # Wrap whole urls patterns to add translation to all urls
 
 # from .views import set_language
@@ -25,6 +26,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', include('account.urls', namespace='account')),
     path('', include('main.urls', namespace='main')),
+    path('', include('herbs.urls', namespace='herbs')),
+    path('', include('partners.urls', namespace='partners')),
+    path('', include('inventory.urls', namespace='inventory')),
     path('admin/', admin.site.urls),
 
 ]
