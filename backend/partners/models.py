@@ -170,35 +170,6 @@ class PartnerStaff(BaseModel):
         return f"{name} - {self.partner.name if self.partner else _('Unknown Partner')} ({self.get_role_display()})"
 
 
-class PartnerProduct(BaseModel):
-    partner = models.ForeignKey(
-        Partner,
-        on_delete=models.CASCADE,
-        related_name='products',
-        verbose_name=_('Partner'),
-    )
-    herb = models.ForeignKey(
-        'herbs.Herb',
-        on_delete=models.CASCADE,
-        related_name='partners',
-        verbose_name=_('Herb'),
-    )
-    is_available = models.BooleanField(
-        default=True,
-        verbose_name=_('Is Available'),
-        help_text=_('If this product is currently available from the partner.'),
-    )
-
-    class Meta:
-        verbose_name = _('Partner Product')
-        verbose_name_plural = _('Partner Products')
-        unique_together = ('partner', 'herb')
-        ordering = ['partner', 'herb']
-
-    def __str__(self):
-        return f"{self.partner.name} - {self.herb.name}"
-
-
 class PartnerReview(BaseModel):
     partner = models.ForeignKey(
         Partner,
@@ -237,3 +208,74 @@ class PartnerReview(BaseModel):
 
     def __str__(self):
         return f"{self.user} → {self.partner} ({self.rating})"
+
+
+class PartnerWallet(BaseModel):
+    partner = models.OneToOneField(
+        Partner,
+        on_delete=models.CASCADE,
+        related_name='wallet',
+        verbose_name=_('Partner'),
+    )
+    balance = models.DecimalField(
+        max_digits=12,
+        decimal_places=2,
+        default=0.00,
+        verbose_name=_('Balance'),
+    )
+    currency = models.ForeignKey(
+        "checkout.Currency",
+        on_delete=models.PROTECT,
+        related_name='wallets',
+        verbose_name=_('Currency'),
+    )
+
+    class Meta:
+        verbose_name = _('Partner Wallet')
+        verbose_name_plural = _('Partner Wallets')
+
+    def __str__(self):
+        return f"{self.partner.name} Wallet - {self.balance} {self.currency.code}"
+
+
+class WalletTransaction(BaseModel):
+    class TransactionType(models.TextChoices):
+        CREDIT = 'credit', _('Credit')
+        DEBIT = 'debit', _('Debit')
+
+    wallet = models.ForeignKey(
+        PartnerWallet,
+        on_delete=models.CASCADE,
+        related_name='transactions',
+        verbose_name=_('Wallet'),
+    )
+    amount = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        verbose_name=_('Amount'),
+    )
+    type = models.CharField(
+        max_length=10,
+        choices=TransactionType.choices,
+        verbose_name=_('Transaction Type'),
+    )
+    purpose = models.CharField(
+        max_length=100,
+        verbose_name=_('Purpose'),
+        help_text=_('Description or reason for this transaction.'),
+    )
+    reference = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name=_('Reference'),
+        help_text=_('Optional external or internal reference.'),
+    )
+
+    class Meta:
+        verbose_name = _('Wallet Transaction')
+        verbose_name_plural = _('Wallet Transactions')
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f"{self.get_type_display()} {self.amount} for {self.wallet.partner.name}"

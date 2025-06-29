@@ -1,6 +1,6 @@
 from django.contrib import admin
 from reversion.admin import VersionAdmin
-from nested_admin import NestedModelAdmin, NestedStackedInline
+from nested_admin import NestedModelAdmin, NestedStackedInline,NestedTabularInline
 from import_export.admin import ExportMixin
 
 from .models import (
@@ -14,6 +14,7 @@ from .models import (
     Illness,
     Source,
     Tag,
+    HerbMedia,
 )
 from .resources import (
     HerbResource,
@@ -52,15 +53,21 @@ class ScientificStudyInline(NestedStackedInline):
     ordering = ('title',)
 
 
+class HerbMediaInline(NestedTabularInline):
+    model = HerbMedia
+    extra = 1
+    fields = ('file', 'type')
+
+
 @admin.register(Herb)
 class HerbAdmin(ExportMixin, NestedModelAdmin, VersionAdmin):
     resource_class = HerbResource
     list_display = ('name', 'latin_name', 'slug', 'is_active', 'created_at', 'updated_at')
     search_fields = ('name', 'latin_name', 'description')
     list_filter = ('tags', 'ailments', 'is_active', 'created_at', 'updated_at')
-    filter_horizontal = ('ailments', 'side_effects', 'sources', 'tags')
+    filter_horizontal = ('ailments', 'side_effects', 'symptoms', 'illnesses', 'sources', 'tags')
     prepopulated_fields = {'slug': ('name',)}
-    inlines = [HerbPreparationStepInline, HerbWarningInline, ScientificStudyInline]
+    inlines = [HerbPreparationStepInline, HerbWarningInline, ScientificStudyInline, HerbMediaInline]
 
 
 @admin.register(HerbPreparationStep)

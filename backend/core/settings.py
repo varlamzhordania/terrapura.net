@@ -33,6 +33,7 @@ LOCAL_APPS = [
     'herbs.apps.HerbsConfig',
     'inventory.apps.InventoryConfig',
     'partners.apps.PartnersConfig',
+    'checkout.apps.CheckoutConfig',
 ]
 
 THIRD_PARTY_APPS = [
@@ -47,10 +48,16 @@ THIRD_PARTY_APPS = [
     # "phonenumber_field",
     'hijack',
     'hijack.contrib.admin',
+    'drf_spectacular',
 
     # 'rosetta', # translate panel
     # 'parler',  # translate models content
     'import_export',  # import and export via django panel
+
+    # DRF Social Auth2
+    'oauth2_provider',
+    'social_django',
+    'drf_social_oauth2',
 ]
 
 INSTALLED_APPS = [
@@ -92,6 +99,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -201,8 +210,11 @@ AUTH_USER_MODEL = "account.User"
 
 AUTHENTICATION_BACKENDS = [
     'account.backends.EmailBackend',
+    'drf_social_oauth2.backends.DjangoOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 ]
+
+ACTIVATE_JWT = True
 
 # REST Framework Settings
 REST_FRAMEWORK = {
@@ -210,6 +222,8 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+        'drf_social_oauth2.authentication.SocialAuthentication',
     ],
 
     'DEFAULT_PERMISSION_CLASSES': [
@@ -229,6 +243,16 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 25,
 
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Terrapura API',
+    'DESCRIPTION': 'Terrapura is a world wide website focused on herbs',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    # OTHER SETTINGS
 }
 
 # Channels Settings

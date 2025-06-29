@@ -68,23 +68,23 @@ services:
 #      - gunicorn
 #      - daphne
   redis:
-    image: redis:7
+    image: redis:8.0.2
     container_name: redis
-    ports:
-      - "6379:6379"
+#    ports:
+#      - "6379:6379"
   memcached:
     image: memcached:alpine
     container_name: memcached
-    ports:
-      - "11211:11211"
+#    ports:
+#      - "11211:11211"
   postgres:
-    image: postgres:14
+    image: postgres:17
     container_name: postgres
     restart: always
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
+#    ports:
+#      - "5432:5432"
     env_file:
       - docker.env
     environment:

@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.core.validators import MinValueValidator
@@ -75,10 +77,12 @@ class InventoryItem(BaseModel):
         max_digits=10,
         decimal_places=2,
         verbose_name=_('Price per kg (USD)'),
+        validators=[MinValueValidator(Decimal('0.01'))],
     )
-    currency = models.CharField(
-        max_length=10,
-        default='USD',
+    currency = models.ForeignKey(
+        "checkout.Currency",
+        on_delete=models.PROTECT,
+        related_name='inventory_items',
         verbose_name=_('Currency'),
     )
     expiration_date = models.DateField(
@@ -188,6 +192,18 @@ class Order(BaseModel):
         null=True,
         verbose_name=_('Notes'),
     )
+    is_approved_by_customer = models.BooleanField(
+        default=False,
+        verbose_name=_('Customer Approved'),
+        help_text=_('Set to true when the customer confirms delivery.'),
+    )
+    approved_at = models.DateTimeField(verbose_name=_('Approved at'), blank=True, null=True)
+    escrow_released = models.BooleanField(
+        default=False,
+        verbose_name=_('Escrow Released'),
+        help_text=_('Indicates if the payment has been released to the partner wallet.'),
+    )
+    released_at = models.DateTimeField(verbose_name=_('Released at'), blank=True, null=True)
 
     class Meta:
         verbose_name = _('Order')

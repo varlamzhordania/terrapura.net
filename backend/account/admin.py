@@ -10,26 +10,27 @@ class CustomUserAdmin(UserAdmin):
     form = CustomUserChangeForm
     model = User
     list_display = (
-        "id", "username", "email", "is_staff", "is_superuser", "is_active", "date_joined",
+        "id", "email", "is_staff", "is_superuser", "is_active", "date_joined",
         "last_login")
     list_filter = ("is_staff", "is_active", "groups")
     readonly_fields = ("date_joined", "last_login", "last_ip")
     fieldsets = (
-        (None, {"fields": ("username", "password")}),
+        (None, {"fields": ("email", "password")}),
         ("Personal Information",
-         {"fields": ("first_name", "last_name", "email")}),
-        ("Permissions", {"fields": ("is_staff", "is_superuser", "is_active", "groups", "user_permissions")}),
+         {"fields": ("first_name", "last_name",)}),
+        ("Permissions",
+         {"fields": ("is_staff", "is_superuser", "is_active", "groups", "user_permissions")}),
         ("Security", {"fields": ("date_joined", "last_login", "last_ip")}),
     )
     add_fieldsets = (
         (None, {
             "fields": (
-                "username", "email", "password1", "password2",
+                "email", "password1", "password2", "first_name", "last_name",
                 "groups", "is_staff", "is_active",
             )}
          ),
     )
-    search_fields = ("id", "username", "email",)
+    search_fields = ("id", "email",)
     ordering = ("id",)
 
 

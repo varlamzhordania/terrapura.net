@@ -9,8 +9,9 @@ from .models import (
     Partner,
     PartnerContact,
     PartnerStaff,
-    PartnerProduct,
     PartnerReview,
+    PartnerWallet,
+    WalletTransaction,
 )
 
 from .resources import (
@@ -19,8 +20,9 @@ from .resources import (
     PartnerResource,
     PartnerContactResource,
     PartnerStaffResource,
-    PartnerProductResource,
     PartnerReviewResource,
+    PartnerWalletResource,
+    WalletTransactionResource,
 )
 
 
@@ -54,20 +56,14 @@ class PartnerStaffInline(NestedStackedInline):
     ordering = ('role',)
 
 
-class PartnerProductInline(NestedStackedInline):
-    model = PartnerProduct
-    extra = 1
-    fields = ('herb', 'is_available', 'is_active')
-    ordering = ('herb',)
-
-
 @admin.register(Partner)
 class PartnerAdmin(ExportMixin, NestedModelAdmin, VersionAdmin):
     resource_class = PartnerResource
-    list_display = ('name', 'country', 'verified', 'rating', 'is_active', 'created_at', 'updated_at')
+    list_display = (
+        'name', 'country', 'verified', 'rating', 'is_active', 'created_at', 'updated_at')
     list_filter = ('verified', 'country', 'is_active', 'created_at', 'updated_at')
     search_fields = ('name', 'description')
-    inlines = [PartnerContactInline, PartnerStaffInline, PartnerProductInline]
+    inlines = [PartnerContactInline, PartnerStaffInline]
 
 
 @admin.register(PartnerContact)
@@ -83,20 +79,33 @@ class PartnerStaffAdmin(ExportMixin, VersionAdmin):
     resource_class = PartnerStaffResource
     list_display = ('partner', 'user', 'role', 'is_active', 'created_at', 'updated_at')
     list_filter = ('role', 'is_active', 'created_at', 'updated_at')
-    search_fields = ('partner__name', 'user__username')
-
-
-@admin.register(PartnerProduct)
-class PartnerProductAdmin(ExportMixin, VersionAdmin):
-    resource_class = PartnerProductResource
-    list_display = ('partner', 'herb', 'is_available', 'is_active', 'created_at', 'updated_at')
-    list_filter = ('is_available', 'is_active', 'created_at', 'updated_at')
-    search_fields = ('partner__name', 'herb__name')
+    search_fields = ('partner__name', 'user__email')
 
 
 @admin.register(PartnerReview)
 class PartnerReviewAdmin(ExportMixin, VersionAdmin):
     resource_class = PartnerReviewResource
-    list_display = ('partner', 'user', 'rating', 'approved', 'is_active', 'created_at', 'updated_at')
+    list_display = (
+        'partner', 'user', 'rating', 'approved', 'is_active', 'created_at', 'updated_at')
     list_filter = ('approved', 'rating', 'is_active', 'created_at', 'updated_at')
-    search_fields = ('partner__name', 'user__username', 'comment')
+    search_fields = ('partner__name', 'user__email', 'comment')
+
+
+@admin.register(PartnerWallet)
+class PartnerWalletAdmin(ExportMixin, VersionAdmin):
+    resource_class = PartnerWalletResource
+    list_display = (
+        'partner', 'balance', 'currency', 'is_active', 'created_at', 'updated_at'
+    )
+    list_filter = ('currency', 'is_active', 'created_at', 'updated_at')
+    search_fields = ('partner__name', 'balance')
+
+
+@admin.register(WalletTransaction)
+class WalletTransactionAdmin(ExportMixin, VersionAdmin):
+    resource_class = WalletTransactionResource
+    list_display = (
+        'wallet__partner', 'amount', 'type', 'is_active', 'created_at', 'updated_at'
+    )
+    list_filter = ('type', 'is_active', 'created_at', 'updated_at')
+    search_fields = ('wallet__partner__name',)
