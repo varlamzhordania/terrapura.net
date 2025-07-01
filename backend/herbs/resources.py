@@ -1,5 +1,6 @@
 from import_export import resources
 from .models import (
+    Category,
     Herb,
     HerbPreparationStep,
     HerbWarning,
@@ -11,6 +12,11 @@ from .models import (
     Source,
     Tag,
 )
+
+
+class CategoryResource(resources.ModelResource):
+    class Meta:
+        model = Category
 
 
 class HerbResource(resources.ModelResource):

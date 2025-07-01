@@ -5,6 +5,41 @@ from autoslug import AutoSlugField
 from core.models import BaseModel, UploadPath
 
 
+class Category(BaseModel):
+    name = models.CharField(
+        max_length=255,
+        verbose_name=_("Category Name"),
+        unique=True,
+        help_text=_("Name of the category, e.g. Digestive Health, Immune Support."),
+    )
+    slug = AutoSlugField(
+        populate_from='name',
+        verbose_name=_("Slug"),
+        unique=True,
+        editable=True,
+        help_text=_("URL-friendly identifier for the category."),
+    )
+    image = models.ImageField(
+        upload_to="categories/",
+        blank=True,
+        null=True,
+        verbose_name=_("Image"),
+        help_text=_("Optional representative image for the category."),
+    )
+
+    class Meta:
+        verbose_name = _("Category")
+        verbose_name_plural = _("Categories")
+        ordering = ["name"]
+        indexes = [
+            models.Index(fields=["name"]),
+            models.Index(fields=["slug"]),
+        ]
+
+    def __str__(self):
+        return self.name
+
+
 class Herb(BaseModel):
     name = models.CharField(
         max_length=255,
@@ -31,6 +66,15 @@ class Herb(BaseModel):
         blank=True,
         null=True,
         help_text=_("General description and overview of the herb."),
+    )
+    category = models.ForeignKey(
+        Category,
+        verbose_name=_('Category'),
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='herbs',
+        help_text=_("Category this herb belongs to."),
     )
     dosage = models.CharField(
         max_length=255,

@@ -1,9 +1,10 @@
 from django.contrib import admin
 from reversion.admin import VersionAdmin
-from nested_admin import NestedModelAdmin, NestedStackedInline,NestedTabularInline
+from nested_admin import NestedModelAdmin, NestedStackedInline, NestedTabularInline
 from import_export.admin import ExportMixin
 
 from .models import (
+    Category,
     Herb,
     HerbPreparationStep,
     HerbWarning,
@@ -17,6 +18,7 @@ from .models import (
     HerbMedia,
 )
 from .resources import (
+    CategoryResource,
     HerbResource,
     HerbPreparationStepResource,
     HerbWarningResource,
@@ -57,6 +59,15 @@ class HerbMediaInline(NestedTabularInline):
     model = HerbMedia
     extra = 1
     fields = ('file', 'type')
+
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    resource_class = CategoryResource
+    list_display = ('name', 'slug', 'is_active', 'created_at', 'updated_at')
+    search_fields = ('name',)
+    list_filter = ('is_active', 'created_at', 'updated_at')
+    prepopulated_fields = {'slug': ('name',)}
 
 
 @admin.register(Herb)

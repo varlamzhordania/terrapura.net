@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+
+@theme{
+        --color-primary-50: hsl(89, 100%, 95%);
+        --color-primary-100: hsl(89, 100%, 90%);
+        --color-primary-200: hsl(89, 100%, 80%);
+        --color-primary-300: hsl(89, 100%, 70%);
+        --color-primary-400: hsl(89, 100%, 60%);
+        --color-primary-500: hsl(89, 100%, 50%); /* Base */
+        --color-primary-600: hsl(89, 100%, 40%);
+        --color-primary-700: hsl(89, 100%, 30%);
+        --color-primary-800: hsl(89, 100%, 20%);
+        --color-primary-900: hsl(89, 100%, 10%);
+
+    /*  Font Theme */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Lora', serif;
+}
+
+
+@layer base {
+    html {
+        @apply text-slate-600 font-body bg-gray-100
+    }
+}
+
+@layer components {
+    .nav-link {
+        @apply flex text-sm uppercase font-bold font-heading hover:text-primary-700 duration-200 transition
+    }
+
+    .nav-logo {
+        @apply text-2xl uppercase font-bold font-heading hover:text-primary-700 duration-200 transition
+    }
+
+    .custom-container {
+        @apply px-4 lg:px-8 xl:px-10 py-5 ;
+    }
+
+    .btn {
+        @apply
+        inline-flex
+        items-center
+        justify-center
+        px-4
+        py-2
+        rounded-md
+        bg-transparent
+        focus:outline-none
+        transition
+        duration-200
+        cursor-pointer;
+    }
+
+    .btn-primary {
+        @apply bg-primary-600 hover:bg-primary-700 ring-primary-400 text-white text-sm
+    }
+
+    .btn-outline {
+        @apply
+        border
+        border-[--color-primary-600]
+        text-[--color-primary-600]
+        bg-transparent
+        hover:bg-[--color-primary-400]
+        hover:text-white;
+    }
+
+    .btn-sm {
+        @apply px-3 py-1 text-sm;
+    }
+
+    .btn-lg {
+        @apply px-6 py-3 text-lg;
+    }
+
+    .sidebar {
+        @apply fixed top-0 left-0 h-full w-[75%] z-50 bg-white;
+    }
+
+    .backdrop {
+        @apply fixed top-0 left-0 w-full h-full z-40 bg-black/60;
+    }
+
+    .bubble {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        clip-path: polygon(50% 0%, 80% 10%, 92% 32%, 97% 62%, 94% 97%, 46% 100%, 5% 92%, 0% 70%, 6% 35%, 22% 7%);
+        transition: clip-path 1s ease;
+    }
+
+
+}
