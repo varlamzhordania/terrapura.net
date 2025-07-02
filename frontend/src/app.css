@@ -7,16 +7,16 @@
 
 
 @theme{
-        --color-primary-50: hsl(89, 100%, 95%);
-        --color-primary-100: hsl(89, 100%, 90%);
-        --color-primary-200: hsl(89, 100%, 80%);
-        --color-primary-300: hsl(89, 100%, 70%);
-        --color-primary-400: hsl(89, 100%, 60%);
-        --color-primary-500: hsl(89, 100%, 50%); /* Base */
-        --color-primary-600: hsl(89, 100%, 40%);
-        --color-primary-700: hsl(89, 100%, 30%);
-        --color-primary-800: hsl(89, 100%, 20%);
-        --color-primary-900: hsl(89, 100%, 10%);
+    --color-primary-50: hsl(89, 100%, 95%);
+    --color-primary-100: hsl(89, 100%, 90%);
+    --color-primary-200: hsl(89, 100%, 80%);
+    --color-primary-300: hsl(89, 100%, 70%);
+    --color-primary-400: hsl(89, 100%, 60%);
+    --color-primary-500: hsl(89, 100%, 50%); /* Base */
+    --color-primary-600: hsl(89, 100%, 40%);
+    --color-primary-700: hsl(89, 100%, 30%);
+    --color-primary-800: hsl(89, 100%, 20%);
+    --color-primary-900: hsl(89, 100%, 10%);
 
     /*  Font Theme */
     --font-heading: 'Poppins', sans-serif;
@@ -26,7 +26,8 @@
 
 @layer base {
     html {
-        @apply text-slate-600 font-body bg-gray-100
+        background: #F9F9F9;
+        @apply text-slate-600 font-body
     }
 }
 
@@ -39,12 +40,55 @@
         @apply text-2xl uppercase font-bold font-heading hover:text-primary-700 duration-200 transition
     }
 
+    .sidebar {
+        @apply fixed top-0 left-0 h-full w-[75%] z-50 bg-white;
+    }
+
+    .backdrop {
+        @apply fixed top-0 left-0 w-full h-full z-40 bg-black/60;
+    }
+
+    .bubble {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        clip-path: polygon(50% 0%, 80% 10%, 92% 32%, 97% 62%, 94% 97%, 46% 100%, 5% 92%, 0% 70%, 6% 35%, 22% 7%);
+        transition: clip-path 1s ease;
+    }
+
+    .card {
+        @apply relative px-3 py-3 rounded-md w-auto h-auto duration-200 transition
+    }
+
+    .card .card-body {
+        @apply py-2 px-4
+    }
+
+    .card img {
+        @apply object-cover w-full rounded-md aspect-video
+    }
+
+    .card .card-backdrop {
+        @apply absolute top-0 left-0 h-full w-full bg-black/60 flex justify-center items-center rounded-md opacity-0 duration-200 transition
+    }
+
+    .card:hover .card-backdrop {
+        @apply opacity-100
+    }
+
+    .avatar{
+        @apply text-lg text-center flex justify-center items-center rounded-full size-8 bg-gray-300
+    }
+
+
     .custom-container {
         @apply px-4 lg:px-8 xl:px-10 py-5 ;
     }
 
     .btn {
         @apply
+        font-heading
+        font-bold
         inline-flex
         items-center
         justify-center
@@ -78,22 +122,6 @@
 
     .btn-lg {
         @apply px-6 py-3 text-lg;
-    }
-
-    .sidebar {
-        @apply fixed top-0 left-0 h-full w-[75%] z-50 bg-white;
-    }
-
-    .backdrop {
-        @apply fixed top-0 left-0 w-full h-full z-40 bg-black/60;
-    }
-
-    .bubble {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        clip-path: polygon(50% 0%, 80% 10%, 92% 32%, 97% 62%, 94% 97%, 46% 100%, 5% 92%, 0% 70%, 6% 35%, 22% 7%);
-        transition: clip-path 1s ease;
     }
 
 

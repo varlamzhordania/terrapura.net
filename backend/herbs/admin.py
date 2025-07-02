@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
 from reversion.admin import VersionAdmin
 from nested_admin import NestedModelAdmin, NestedStackedInline, NestedTabularInline
 from import_export.admin import ExportMixin
@@ -62,7 +63,7 @@ class HerbMediaInline(NestedTabularInline):
 
 
 @admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
+class CategoryAdmin(ExportMixin, VersionAdmin):
     resource_class = CategoryResource
     list_display = ('name', 'slug', 'is_active', 'created_at', 'updated_at')
     search_fields = ('name',)
@@ -78,7 +79,37 @@ class HerbAdmin(ExportMixin, NestedModelAdmin, VersionAdmin):
     list_filter = ('tags', 'ailments', 'is_active', 'created_at', 'updated_at')
     filter_horizontal = ('ailments', 'side_effects', 'symptoms', 'illnesses', 'sources', 'tags')
     prepopulated_fields = {'slug': ('name',)}
-    inlines = [HerbPreparationStepInline, HerbWarningInline, ScientificStudyInline, HerbMediaInline]
+    readonly_fields = ('created_at', 'updated_at')
+
+    inlines = [
+        HerbPreparationStepInline,
+        HerbWarningInline,
+        ScientificStudyInline,
+        HerbMediaInline,
+    ]
+
+    fieldsets = (
+        (_('Basic Info'), {
+            'fields': (
+                'name', 'slug', 'latin_name', 'category', 'description', 'dosage', 'image_link',
+                'is_active')
+        }),
+        (_('Relations'), {
+            'fields': ('ailments', 'side_effects', 'symptoms', 'illnesses', 'sources', 'tags'),
+        }),
+        (_('SEO'), {
+            'classes': ('collapse',),
+            'fields': (
+                'meta_title', 'meta_description', 'meta_keywords',
+                'canonical_url', 'og_image',
+                'twitter_title', 'twitter_description', 'twitter_card_type',
+                'robots_index', 'robots_follow'
+            )
+        }),
+        (_('Metadata'), {
+            'fields': ('created_at', 'updated_at',)
+        }),
+    )
 
 
 @admin.register(HerbPreparationStep)

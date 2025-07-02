@@ -13,13 +13,13 @@ class BaseModel(models.Model):
         auto_now_add=True,
         blank=True,
         null=True
-        )
+    )
     updated_at = models.DateTimeField(
         verbose_name=_('Updated at'),
         auto_now=True,
         blank=True,
         null=True
-        )
+    )
 
     class Meta:
         abstract = True
@@ -76,3 +76,81 @@ class FileSizeValidator:
                 and self.message == other.message
                 and self.code == other.code
         )
+
+
+class SeoModel(models.Model):
+    class TwitterCardTypeChoices(models.TextChoices):
+        SUMMARY = "summary", _("Summary")
+        SUMMARY_LARGE_IMAGE = "summary_large_image", _("Summary Large Image")
+        APP = "app", _("App")
+        PLAYER = "player", _("Player")
+
+    class RobotsIndexChoices(models.TextChoices):
+        INDEX = "index", _("Index")
+        NOINDEX = "noindex", _("No Index")
+
+    class RobotsFollowChoices(models.TextChoices):
+        FOLLOW = "follow", _("Follow")
+        NOFOLLOW = "nofollow", _("No Follow")
+
+    meta_title = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+        verbose_name=_("Meta Title")
+        )
+    meta_description = models.TextField(blank=True, null=True, verbose_name=_("Meta Description"))
+    meta_keywords = models.CharField(
+        max_length=512,
+        blank=True,
+        null=True,
+        verbose_name=_("Meta Keywords")
+        )
+    canonical_url = models.URLField(blank=True, null=True, verbose_name=_("Canonical URL"))
+
+    og_image = models.ImageField(
+        upload_to=UploadPath("seo", "og"),
+        blank=True,
+        null=True,
+        verbose_name=_("OG Image"),
+        validators=[FileSizeValidator(max_size_mb=3)],
+        help_text=_("Image for social media sharing."),
+    )
+
+    twitter_title = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+        verbose_name=_("Twitter Title")
+        )
+    twitter_description = models.TextField(
+        blank=True,
+        null=True,
+        verbose_name=_("Twitter Description")
+        )
+    twitter_card_type = models.CharField(
+        max_length=32,
+        choices=TwitterCardTypeChoices.choices,
+        default=TwitterCardTypeChoices.SUMMARY_LARGE_IMAGE,
+        blank=True,
+        null=True,
+        verbose_name=_("Twitter Card Type"),
+    )
+
+    robots_index = models.CharField(
+        max_length=10,
+        choices=RobotsIndexChoices.choices,
+        default=RobotsIndexChoices.INDEX,
+        verbose_name=_("Robots Index"),
+        help_text=_("Should search engines index this page?"),
+    )
+    robots_follow = models.CharField(
+        max_length=10,
+        choices=RobotsFollowChoices.choices,
+        default=RobotsFollowChoices.FOLLOW,
+        verbose_name=_("Robots Follow"),
+        help_text=_("Should search engines follow links on this page?"),
+    )
+
+    class Meta:
+        abstract = True

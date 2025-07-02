@@ -32,6 +32,7 @@ urlpatterns = [
     path('', include('partners.urls', namespace='partners')),
     path('', include('inventory.urls', namespace='inventory')),
     path('', include('checkout.urls', namespace='checkout')),
+    path('', include('blog.urls', namespace='blog')),
     path('admin/', admin.site.urls),
 
 ]
@@ -42,7 +43,7 @@ urlpatterns += [
     re_path(r'^auth/', include('drf_social_oauth2.urls', namespace='drf')),
     # re_path(r'^rosetta/', include('rosetta.urls')),
     path('hijack/', include('hijack.urls')),
-    # path("ckeditor5/", include('django_ckeditor_5.urls')),
+    path("ckeditor5/", include('django_ckeditor_5.urls')),
 ]
 
 

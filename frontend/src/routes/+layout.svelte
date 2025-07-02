@@ -38,7 +38,7 @@
     </li>
 {/snippet}
 
-<header class="container custom-container">
+<header class="container custom-container pb-0 sticky top-0 z-50 bg-white">
     <nav class="flex justify-between items-center border-b-2 border-b-gray-300 pb-4">
         <ul class="flex justify-start items-center space-x-5">
             <li class="flex space-x-2 justify-start items-center">
@@ -46,7 +46,7 @@
                     <Fa icon={faBars} size="lg"/>
                 </button>
                 <a href="/" class="nav-link">
-                    <Fa icon={faLeaf} size="lg"/>
+                    <img src="/logo.png" alt="logo of terrapura" class="size-24"/>
                 </a>
             </li>
             {#each navigationLinks as item }
@@ -83,15 +83,17 @@
     <div class="backdrop" onclick={()=> openSideBar = !openSideBar}></div>
 {/if}
 
-<main class="min-h-dvh container custom-container ">
+<main class="min-h-dvh container custom-container">
     {@render children()}
 </main>
 
-<footer class="bg-white container custom-container">
+<footer class="bg-white container custom-container pt-0">
     <div class="flex items-center border-t-2 border-t-gray-300 pt-4">
         <ul>
             <li>
-                <a href="/" class="nav-logo">Terrapura</a>
+                <a href="/" class="nav-logo">
+                    <img src="/logo-name.png" alt="logo of terrapura" class="aspect-video h-32"/>
+                </a>
             </li>
         </ul>
     </div>

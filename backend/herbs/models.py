@@ -1,8 +1,12 @@
+import json
+from urllib.parse import urljoin
+
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from autoslug import AutoSlugField
+from django_ckeditor_5.fields import CKEditor5Field
 
-from core.models import BaseModel, UploadPath
+from core.models import BaseModel, SeoModel, FileSizeValidator, UploadPath
 
 
 class Category(BaseModel):
@@ -23,6 +27,7 @@ class Category(BaseModel):
         upload_to="categories/",
         blank=True,
         null=True,
+        validators=[FileSizeValidator()],
         verbose_name=_("Image"),
         help_text=_("Optional representative image for the category."),
     )
@@ -40,7 +45,7 @@ class Category(BaseModel):
         return self.name
 
 
-class Herb(BaseModel):
+class Herb(SeoModel, BaseModel):
     name = models.CharField(
         max_length=255,
         verbose_name=_('Name'),
@@ -61,7 +66,7 @@ class Herb(BaseModel):
         null=True,
         help_text=_("Scientific (Latin) name of the herb"),
     )
-    description = models.TextField(
+    description = CKEditor5Field(
         verbose_name=_('Description'),
         blank=True,
         null=True,
@@ -142,6 +147,55 @@ class Herb(BaseModel):
     def __str__(self):
         return f"{self.name} ({self.latin_name})" if self.latin_name else self.name
 
+    def get_structured_data(self, frontend_base_url: str) -> str:
+        herb_url = urljoin(frontend_base_url, f"/herbs/{self.slug}/")
+        image_url = self.image_link or (
+            urljoin(frontend_base_url, self.og_image.url) if self.og_image else "")
+
+        data = {
+            "@context": "https://schema.org",
+            "@type": "DietarySupplement",
+            "name": self.meta_title or self.name,
+            "url": herb_url,
+            "image": image_url,
+            "alternateName": self.latin_name,
+            "description": self.meta_description or self.description or "",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": herb_url
+            },
+            "brand": {
+                "@type": "Organization",
+                "name": "Terrapura"
+            },
+            "offers": {
+                "@type": "Offer",
+                "url": herb_url,
+                "availability": "https://schema.org/InStock",
+                "priceCurrency": "USD",  # or appropriate currency
+                # "price": "19.99",     # Optional if price is dynamic or unknown
+                "businessFunction": "https://schema.org/Sell",
+                "eligibleCustomerType": [
+                    "https://schema.org/BusinessCustomer",
+                    "https://schema.org/EndUser"
+                ],
+                "seller": {
+                    "@type": "Organization",
+                    "name": "Terrapura",
+                    "url": frontend_base_url
+                }
+            }
+        }
+
+        if self.dosage:
+            data["recommendedIntake"] = {
+                "@type": "RecommendedDoseSchedule",
+                "doseUnit": "per day",
+                "doseValue": self.dosage,
+            }
+
+        return json.dumps(data, ensure_ascii=False)
+
 
 class HerbMedia(BaseModel):
     class TypeChoices(models.TextChoices):
@@ -159,6 +213,7 @@ class HerbMedia(BaseModel):
     file = models.FileField(
         verbose_name=_('File'),
         upload_to=UploadPath('herbs', 'medias'),
+        validators=[FileSizeValidator()],
         blank=True,
         null=True,
     )

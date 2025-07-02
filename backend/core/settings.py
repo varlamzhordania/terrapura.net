@@ -34,11 +34,12 @@ LOCAL_APPS = [
     'inventory.apps.InventoryConfig',
     'partners.apps.PartnersConfig',
     'checkout.apps.CheckoutConfig',
+    'blog.apps.BlogConfig',
 ]
 
 THIRD_PARTY_APPS = [
     # 'ckeditor',
-    # 'django_ckeditor_5',
+    'django_ckeditor_5',
     # 'mptt',
     'nested_admin',
     'reversion',
