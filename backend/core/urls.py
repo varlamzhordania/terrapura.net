@@ -26,13 +26,13 @@ from django.conf.urls.static import static
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 urlpatterns = [
-    path('', include('account.urls', namespace='account')),
-    path('', include('main.urls', namespace='main')),
-    path('', include('herbs.urls', namespace='herbs')),
-    path('', include('partners.urls', namespace='partners')),
-    path('', include('inventory.urls', namespace='inventory')),
-    path('', include('checkout.urls', namespace='checkout')),
-    path('', include('blog.urls', namespace='blog')),
+    path('api/v1/account/', include('account.v1.urls', namespace='account-v1')),
+    path('api/', include('main.urls', namespace='main')),
+    path('api/v1/herbs/', include('herbs.v1.urls', namespace='herbs-v1')),
+    path('api/', include('partners.urls', namespace='partners')),
+    path('api/', include('inventory.urls', namespace='inventory')),
+    path('api/', include('checkout.urls', namespace='checkout')),
+    path('api/', include('blog.urls', namespace='blog')),
     path('admin/', admin.site.urls),
 
 ]
@@ -40,7 +40,7 @@ urlpatterns = [
 urlpatterns += [
     # path("setlang/", set_language, name="set_language"),
     path('api-auth/', include('rest_framework.urls')),
-    re_path(r'^auth/', include('drf_social_oauth2.urls', namespace='drf')),
+    re_path(r'^api/auth/', include('drf_social_oauth2.urls', namespace='drf')),
     # re_path(r'^rosetta/', include('rosetta.urls')),
     path('hijack/', include('hijack.urls')),
     path("ckeditor5/", include('django_ckeditor_5.urls')),

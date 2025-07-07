@@ -59,7 +59,7 @@ class ScientificStudyInline(NestedStackedInline):
 class HerbMediaInline(NestedTabularInline):
     model = HerbMedia
     extra = 1
-    fields = ('file', 'type')
+    fields = ('file', 'type','is_featured')
 
 
 @admin.register(Category)

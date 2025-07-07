@@ -2,9 +2,15 @@
     import '../app.css';
     import Fa from "svelte-fa";
     import {slide} from "svelte/transition"
-    import {faBars, faMagnifyingGlass, faCartShopping, faUser, faLeaf} from "@fortawesome/free-solid-svg-icons";
+    import {faBars, faMagnifyingGlass, faCartShopping, faUser} from "@fortawesome/free-solid-svg-icons";
+    import {authState, clearAuth, setAuth} from "$lib/states/auth.svelte.js";
 
-    let {children} = $props();
+    let {children, data} = $props();
+
+    // Initialize client authState from SSR-provided data
+    if (data.access_token) {
+        setAuth({access_token: data.access_token, user: data.user})
+    }
 
     const navigationLinks = [
         {
@@ -26,9 +32,25 @@
     ]
 
     let openSideBar = $state(false)
+    let openUserDropDown = $state(false)
+    let dropDownEl = $state(null);
+
+
+    const handleClickOutside = (event) => {
+        if (openUserDropDown && dropDownEl && !dropDownEl.contains(event.target)) {
+            openUserDropDown = false;
+        }
+    }
+
+    const handleLogout = async () => {
+        const response = await fetch("/api/auth/logout")
+        if (response.ok) clearAuth()
+    }
 
 
 </script>
+
+<svelte:document onclick={handleClickOutside}/>
 
 {#snippet navItem(item, mobile = true)}
     <li class={mobile ? "hidden lg:inline-block" :"w-full"}>
@@ -38,7 +60,7 @@
     </li>
 {/snippet}
 
-<header class="container custom-container pb-0 sticky top-0 z-50 bg-white">
+<header class="container custom-container pb-0 sticky top-0 z-30 bg-white">
     <nav class="flex justify-between items-center border-b-2 border-b-gray-300 pb-4">
         <ul class="flex justify-start items-center space-x-5">
             <li class="flex space-x-2 justify-start items-center">
@@ -60,9 +82,43 @@
             <button class="btn">
                 <Fa icon={faCartShopping} size="lg"/>
             </button>
-            <button class="btn">
-                <Fa icon={faUser} size="lg"/>
-            </button>
+            {#if authState.logged_in}
+                <div class="relative" bind:this={dropDownEl}>
+                    <button
+                            class="btn"
+                            onclick={() => openUserDropDown = !openUserDropDown}
+
+                    >
+                        <Fa icon={faUser} size="lg"/>
+                    </button>
+                    <!-- User Dropdown menu -->
+                    {#if openUserDropDown}
+                        <div transition:slide
+                             class="absolute inset-0 inset-auto -translate-x-3/4 m-auto z-10 bg-white divide-y divide-gray-100 rounded-md border-2 border-gray-300 shadow-lg w-44">
+                            <div class="px-4 py-3 text-sm">
+                                <div>{authState.user.first_name} {authState.user.last_name}</div>
+                                <div class="font-medium truncate text-slate-700">{authState.user.email}</div>
+                            </div>
+                            <ul class="p-2 text-sm " aria-labelledby="avatarButton">
+                                <li>
+                                    <a href="/dashboard" class="block px-4 py-2 rounded-md hover:bg-gray-200">
+                                        Dashboard
+                                    </a>
+                                </li>
+                                <li>
+                                    <button class="block w-full text-start px-4 py-2 cursor-pointer rounded-md  hover:bg-gray-200"
+                                            onclick={handleLogout}>
+                                        Sign out
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    {/if}
+                </div>
+            {:else }
+                <a href="/auth/login" class="btn btn-primary">Sign In</a>
+            {/if}
+
         </div>
     </nav>
 </header>
@@ -80,7 +136,8 @@
             </ul>
         </div>
     </div>
-    <div class="backdrop" onclick={()=> openSideBar = !openSideBar}></div>
+    <button class="backdrop" aria-label="backdrop" tabindex="backdrop"
+            onclick={()=> openSideBar = !openSideBar}></button>
 {/if}
 
 <main class="min-h-dvh container custom-container">

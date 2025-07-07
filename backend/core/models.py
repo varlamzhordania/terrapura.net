@@ -98,14 +98,14 @@ class SeoModel(models.Model):
         blank=True,
         null=True,
         verbose_name=_("Meta Title")
-        )
+    )
     meta_description = models.TextField(blank=True, null=True, verbose_name=_("Meta Description"))
     meta_keywords = models.CharField(
         max_length=512,
         blank=True,
         null=True,
         verbose_name=_("Meta Keywords")
-        )
+    )
     canonical_url = models.URLField(blank=True, null=True, verbose_name=_("Canonical URL"))
 
     og_image = models.ImageField(
@@ -122,12 +122,12 @@ class SeoModel(models.Model):
         blank=True,
         null=True,
         verbose_name=_("Twitter Title")
-        )
+    )
     twitter_description = models.TextField(
         blank=True,
         null=True,
         verbose_name=_("Twitter Description")
-        )
+    )
     twitter_card_type = models.CharField(
         max_length=32,
         choices=TwitterCardTypeChoices.choices,
@@ -154,3 +154,17 @@ class SeoModel(models.Model):
 
     class Meta:
         abstract = True
+
+
+SEO_MODEL_FIELDS = [
+    'meta_title',
+    'meta_description',
+    'meta_keywords',
+    'canonical_url',
+    'og_image',
+    'twitter_title',
+    'twitter_description',
+    'twitter_card_type',
+    'robots_index',
+    'robots_follow',
+]

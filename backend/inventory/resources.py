@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 from .models import (
     InventoryBase,
     InventoryItem,
+    InventoryPrice,
     InventoryTransactionLog,
     LowStockAlert,
     Order,
@@ -22,6 +23,11 @@ class InventoryBaseResource(resources.ModelResource):
 class InventoryItemResource(resources.ModelResource):
     class Meta:
         model = InventoryItem
+
+
+class InventoryPriceResource(resources.ModelResource):
+    class Meta:
+        model = InventoryPrice
 
 
 class InventoryTransactionLogResource(resources.ModelResource):

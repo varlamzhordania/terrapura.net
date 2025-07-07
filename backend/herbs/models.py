@@ -223,6 +223,11 @@ class HerbMedia(BaseModel):
         default=TypeChoices.OTHER,
         help_text=_('Type of the herb media'),
     )
+    is_featured = models.BooleanField(
+        verbose_name=_('Featured'),
+        default=False,
+        help_text=_('Is this herb media featured? images could be used for thumbnail'),
+    )
 
     class Meta:
         verbose_name = _('Herb Media')

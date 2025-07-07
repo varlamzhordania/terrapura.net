@@ -92,7 +92,7 @@
             id: 1,
             name: "Organic Chamomile",
             slug: "organic-chamomile",
-            image: "/images/chamomile.jpg",
+            image: null,
             price: 8.99,
             description: "Soothing dried chamomile flowers, perfect for tea or relaxation.",
         },
@@ -100,7 +100,7 @@
             id: 2,
             name: "Fresh Basil Leaves",
             slug: "fresh-basil-leaves",
-            image: "/images/basil.jpg",
+            image: null,
             price: 3.49,
             description: "Aromatic and flavorful, ideal for Italian cooking and salads.",
         },
@@ -108,7 +108,7 @@
             id: 3,
             name: "Dried Lavender",
             slug: "dried-lavender",
-            image: "/images/lavender.jpg",
+            image: null,
             price: 6.75,
             description: "Fragrant lavender buds used for calming teas or sachets.",
         },
@@ -116,7 +116,7 @@
             id: 4,
             name: "Turmeric Root Powder",
             slug: "turmeric-root-powder",
-            image: "/images/turmeric.jpg",
+            image: null,
             price: 9.99,
             description: "Golden turmeric powder with anti-inflammatory benefits.",
         },
@@ -124,7 +124,7 @@
             id: 5,
             name: "Holy Basil (Tulsi)",
             slug: "holy-basil-tulsi",
-            image: "/images/holy-basil.jpg",
+            image: null,
             price: 5.95,
             description: "Adaptogenic herb used in Ayurveda to reduce stress.",
         },
@@ -132,7 +132,7 @@
             id: 6,
             name: "Peppermint Leaves",
             slug: "peppermint-leaves",
-            image: "/images/peppermint.jpg",
+            image: null,
             price: 4.25,
             description: "Refreshing and cooling, great for teas and digestion.",
         },
@@ -140,7 +140,7 @@
             id: 7,
             name: "Lemongrass Stalks",
             slug: "lemongrass-stalks",
-            image: "/images/lemongrass.jpg",
+            image: null,
             price: 3.99,
             description: "Citrusy herb popular in Thai cooking and herbal infusions.",
         },
@@ -148,7 +148,7 @@
             id: 8,
             name: "Milk Thistle Seeds",
             slug: "milk-thistle-seeds",
-            image: "/images/milk-thistle.jpg",
+            image: null,
             price: 7.49,
             description: "Supports liver health and detoxification.",
         },
@@ -317,7 +317,7 @@
 </section>
 
 <!-- Featured Section -->
-<section class="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-10 xl:grid-cols-12 min-h-dvh gap-16 mt-64">
+<section class="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-10 xl:grid-cols-12 min-h-dvh gap-8 lg:gap-16 mt-64">
     <div class="col-span-1 md:col-span-2 lg:col-span-4 xl:col-span-3 flex flex-col gap-4">
         <div class="card bg-gray-200 text-slate-900 shadow-none flex items-center justify-start gap-2">
             <Fa icon={faLeaf} size="lg"/>
@@ -392,12 +392,12 @@
                 Top Categories
             </p>
         </div>
-        <div class="flex justify-between items-center gap-3">
+        <div class="flex flex-wrap lg:flex-nowrap justify-between items-center gap-3">
             {#each categories.slice(0, 2) as category}
                 <div class="card p-0 w-full h-[300px]">
                     <img src="/herbs.jpg" alt="{category.name}" class="h-full"/>
                     <div class="absolute p-5 w-full h-full top-0 left-0 bg-gray-900/50 rounded-md flex flex-col justify-center items-center gap-2">
-                        <h3 class="text-2xl text-slate-200 font-bold font-heading">{category.name}</h3>
+                        <h3 class="text-2xl text-slate-200 font-bold font-heading text-center">{category.name}</h3>
                         <p class="text-lg text-slate-300 font-medium text-center">{category.description}</p>
                         <a href="/" class="btn btn-primary font-bold">Shop Now</a>
                     </div>
@@ -420,10 +420,3 @@
     </div>
 
 </section>
-<style>
-    swiper-container {
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-</style>

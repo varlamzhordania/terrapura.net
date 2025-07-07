@@ -1,5 +1,3 @@
-from decimal import Decimal
-
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.core.validators import MinValueValidator
@@ -8,6 +6,19 @@ from django.contrib.auth import get_user_model
 from core.models import BaseModel
 
 User = get_user_model()
+
+
+class QuantityUnitChoices(models.TextChoices):
+    GRAM = 'g', _('Gram')
+    KILOGRAM = 'kg', _('Kilogram')
+    POUND = 'lb', _('Pound')
+    OUNCE = 'oz', _('Ounce')
+    LITER = 'l', _('Liter')
+    MILLILITER = 'ml', _('Milliliter')
+    UNIT = 'unit', _('Unit')
+    BAG = 'bag', _('Bag')
+    BOX = 'box', _('Box')
+    PACK = 'pack', _('Pack')
 
 
 class InventoryBase(BaseModel):
@@ -51,6 +62,11 @@ class InventoryBase(BaseModel):
         verbose_name_plural = _('Inventory Bases')
         unique_together = ('partner', 'name')
         ordering = ['partner', 'name']
+        indexes = [
+            models.Index(fields=['partner']),
+            models.Index(fields=['country']),
+            models.Index(fields=['partner', 'name']),
+        ]
 
     def __str__(self):
         return f"{self.name} ({self.partner.name})"
@@ -69,21 +85,17 @@ class InventoryItem(BaseModel):
         related_name='inventory_items',
         verbose_name=_('Inventory Base'),
     )
-    quantity_kg = models.FloatField(
-        verbose_name=_('Quantity (kg)'),
-        validators=[MinValueValidator(0.01)],
+    quantity = models.FloatField(
+        verbose_name=_('Quantity'),
+        validators=[MinValueValidator(0.0001)],
+        default=0.0001,
     )
-    price_usd = models.DecimalField(
-        max_digits=10,
-        decimal_places=2,
-        verbose_name=_('Price per kg (USD)'),
-        validators=[MinValueValidator(Decimal('0.01'))],
-    )
-    currency = models.ForeignKey(
-        "checkout.Currency",
-        on_delete=models.PROTECT,
-        related_name='inventory_items',
-        verbose_name=_('Currency'),
+    quantity_unit = models.CharField(
+        max_length=20,
+        choices=QuantityUnitChoices.choices,
+        default=QuantityUnitChoices.KILOGRAM,
+        verbose_name=_('Quantity Unit'),
+        help_text=_("The measurement unit for the quantity"),
     )
     expiration_date = models.DateField(
         blank=True,
@@ -94,10 +106,10 @@ class InventoryItem(BaseModel):
         default=True,
         verbose_name=_('Available'),
     )
-    low_stock_threshold_kg = models.FloatField(
+    low_stock_threshold = models.FloatField(
         default=5.0,
-        validators=[MinValueValidator(0.1)],
-        verbose_name=_('Low Stock Threshold (kg)')
+        validators=[MinValueValidator(0.0001)],
+        verbose_name=_('Low Stock Threshold')
     )
 
     class Meta:
@@ -105,12 +117,60 @@ class InventoryItem(BaseModel):
         verbose_name_plural = _('Inventory Items')
         unique_together = ('herb', 'base')
         ordering = ['base', 'herb']
+        indexes = [
+            models.Index(fields=['herb']),
+            models.Index(fields=['base']),
+            models.Index(fields=['base', 'herb']),
+            models.Index(fields=['is_available']),
+        ]
 
     def __str__(self):
-        return f"{self.herb.name} @ {self.base.name} ({self.quantity_kg}kg)"
+        return f"{self.herb.name} @ {self.base.name} ({self.quantity} {self.get_quantity_unit_display()})"
 
     def is_below_threshold(self):
-        return self.quantity_kg < self.low_stock_threshold_kg
+        return self.quantity < self.low_stock_threshold
+
+
+class InventoryPrice(BaseModel):
+    inventory_item = models.ForeignKey(
+        InventoryItem,
+        on_delete=models.CASCADE,
+        related_name='prices',
+        verbose_name=_('Inventory Item')
+    )
+    unit = models.CharField(
+        max_length=20,
+        choices=QuantityUnitChoices.choices,
+        default=QuantityUnitChoices.KILOGRAM,
+        verbose_name=_('Price Unit'),
+        help_text=_('Unit this price refers to (e.g. per kg, per box, etc.)'),
+    )
+    price = models.DecimalField(
+        max_digits=12,
+        decimal_places=4,
+        validators=[MinValueValidator(0.0001)],
+        verbose_name=_('Price'),
+        help_text=_('Price for the selected unit.'),
+    )
+    currency = models.ForeignKey(
+        'checkout.Currency',
+        on_delete=models.PROTECT,
+        related_name='inventory_prices',
+        verbose_name=_('Currency')
+    )
+
+    class Meta:
+        verbose_name = _('Inventory Price')
+        verbose_name_plural = _('Inventory Prices')
+        unique_together = ('inventory_item', 'unit')
+        ordering = ['inventory_item', 'unit']
+        indexes = [
+            models.Index(fields=['inventory_item', 'unit']),
+            models.Index(fields=['currency']),
+        ]
+
+    def __str__(self):
+        return f"{self.inventory_item} - {self.get_unit_display()}: {self.price} {self.currency.code}"
 
 
 class InventoryTransactionLog(BaseModel):
@@ -125,18 +185,39 @@ class InventoryTransactionLog(BaseModel):
         on_delete=models.CASCADE,
         related_name='transactions'
     )
-    action = models.CharField(max_length=20, choices=ActionChoices.choices)
-    quantity_kg = models.FloatField(validators=[MinValueValidator(0.01)])
-    performed_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
-    note = models.TextField(blank=True, null=True)
+    action = models.CharField(
+        verbose_name=_('Action'),
+        max_length=20,
+        choices=ActionChoices.choices,
+        default=ActionChoices.ADJUST,
+    )
+    quantity = models.FloatField(
+        verbose_name=_('Quantity'),
+        validators=[MinValueValidator(0.0001)],
+        default=0.0001,
+    )
+    performed_by = models.ForeignKey(
+        User,
+        verbose_name=_('Performed By'),
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True
+    )
+    note = models.TextField(verbose_name=_("Note"), blank=True, null=True)
 
     class Meta:
         ordering = ['-created_at']
         verbose_name = _('Inventory Transaction')
         verbose_name_plural = _('Inventory Transactions')
+        indexes = [
+            models.Index(fields=['inventory_item']),
+            models.Index(fields=['action']),
+            models.Index(fields=['performed_by']),
+            models.Index(fields=['created_at']),
+        ]
 
     def __str__(self):
-        return f"{self.action} {self.quantity_kg}kg - {self.inventory_item}"
+        return f"{self.action} {self.quantity} - {self.inventory_item}"
 
 
 class LowStockAlert(BaseModel):
@@ -151,6 +232,11 @@ class LowStockAlert(BaseModel):
     class Meta:
         verbose_name = _('Low Stock Alert')
         verbose_name_plural = _('Low Stock Alerts')
+        indexes = [
+            models.Index(fields=['inventory_item']),
+            models.Index(fields=['triggered_at']),
+            models.Index(fields=['notified']),
+        ]
 
     def __str__(self):
         return f"⚠️ Low stock for {self.inventory_item}"
@@ -183,8 +269,8 @@ class Order(BaseModel):
         verbose_name=_('Status'),
     )
     total_price = models.DecimalField(
-        max_digits=10,
-        decimal_places=2,
+        max_digits=12,
+        decimal_places=4,
         verbose_name=_('Total Price'),
     )
     notes = models.TextField(
@@ -209,12 +295,20 @@ class Order(BaseModel):
         verbose_name = _('Order')
         verbose_name_plural = _('Orders')
         ordering = ['-created_at']
+        indexes = [
+            models.Index(fields=['user']),
+            models.Index(fields=['partner']),
+            models.Index(fields=['status']),
+            models.Index(fields=['created_at']),
+            models.Index(fields=['is_approved_by_customer']),
+            models.Index(fields=['escrow_released']),
+        ]
 
     def __str__(self):
         return f"Order #{self.id} - {self.user.username}"
 
 
-class OrderItem(models.Model):
+class OrderItem(BaseModel):
     order = models.ForeignKey(
         Order,
         on_delete=models.CASCADE,
@@ -228,18 +322,26 @@ class OrderItem(models.Model):
         related_name='order_items',
         verbose_name=_('Inventory Item'),
     )
-    quantity_kg = models.FloatField(
-        verbose_name=_('Quantity (kg)'),
-        validators=[MinValueValidator(0.01)],
+    quantity = models.FloatField(
+        verbose_name=_('Quantity'),
+        validators=[MinValueValidator(0.0001)],
+        default=0.0001,
+    )
+    quantity_unit = models.CharField(
+        max_length=20,
+        choices=QuantityUnitChoices.choices,
+        default=QuantityUnitChoices.KILOGRAM,
+        verbose_name=_('Quantity Unit'),
+        help_text=_('Unit this quantity refers to (e.g. per kg, per box, etc.)'),
     )
     unit_price = models.DecimalField(
-        max_digits=10,
-        decimal_places=2,
+        max_digits=12,
+        decimal_places=4,
         verbose_name=_('Unit Price'),
     )
     total_price = models.DecimalField(
-        max_digits=10,
-        decimal_places=2,
+        max_digits=12,
+        decimal_places=4,
         verbose_name=_('Total Price'),
     )
 
@@ -247,9 +349,13 @@ class OrderItem(models.Model):
         verbose_name = _('Order Item')
         verbose_name_plural = _('Order Items')
         ordering = ['order']
+        indexes = [
+            models.Index(fields=['order']),
+            models.Index(fields=['inventory_item']),
+        ]
 
     def __str__(self):
-        return f"{self.inventory_item} x {self.quantity_kg}kg"
+        return f"{self.inventory_item} x {self.quantity}{self.get_quantity_unit_display()}"
 
 
 class Shipment(BaseModel):
@@ -296,6 +402,13 @@ class Shipment(BaseModel):
     class Meta:
         verbose_name = _('Shipment')
         verbose_name_plural = _('Shipments')
+        indexes = [
+            models.Index(fields=['order']),
+            models.Index(fields=['status']),
+            models.Index(fields=['carrier']),
+            models.Index(fields=['shipped_at']),
+            models.Index(fields=['delivered_at']),
+        ]
 
     def __str__(self):
         return f"Shipment for Order #{self.order.id} ({self.get_status_display()})"

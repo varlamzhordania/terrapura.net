@@ -4,6 +4,7 @@
 
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+@plugin "flowbite/plugin";
 
 
 @theme{
@@ -69,14 +70,14 @@
     }
 
     .card .card-backdrop {
-        @apply absolute top-0 left-0 h-full w-full bg-black/60 flex justify-center items-center rounded-md opacity-0 duration-200 transition
+        @apply absolute top-0 left-0 h-full w-full bg-black/60 flex justify-center items-center rounded-xl opacity-0 duration-200 transition
     }
 
     .card:hover .card-backdrop {
         @apply opacity-100
     }
 
-    .avatar{
+    .avatar {
         @apply text-lg text-center flex justify-center items-center rounded-full size-8 bg-gray-300
     }
 
@@ -103,8 +104,27 @@
     }
 
     .btn-primary {
-        @apply bg-primary-600 hover:bg-primary-700 ring-primary-400 text-white text-sm
+        @apply bg-primary-700 hover:bg-primary-800 ring-primary-400 text-white text-sm
     }
+
+    .btn-secondary {
+        @apply text-gray-700 bg-gray-200 hover:bg-gray-300 text-sm;
+    }
+
+    .btn-success {
+        @apply bg-green-600 hover:bg-green-700 text-white text-sm;
+    }
+
+
+    .btn-danger {
+        @apply bg-red-600 hover:bg-red-700 text-white text-sm;
+    }
+
+
+    .btn-ghost {
+        @apply bg-transparent text-primary-600 hover:bg-primary-100 text-sm;
+    }
+
 
     .btn-outline {
         @apply
@@ -125,4 +145,67 @@
     }
 
 
+    .form-control-checkbox {
+        @apply w-4 h-4 text-primary-700 bg-gray-200 border-gray-400 rounded focus:ring-transparent dark:focus:ring-primary-700 dark:ring-offset-gray-900 focus:ring-2 dark:bg-gray-700 dark:border-gray-600
+    }
+
+    .form-control-label {
+        @apply ms-2 text-sm font-medium text-gray-900 dark:text-gray-300
+    }
+
+    .badge {
+        @apply text-xs font-heading font-medium px-1.5 py-0.5 text-primary-800 bg-primary-500/10 rounded-full capitalize;
+    }
+
+    .badge-success {
+        @apply text-xs font-heading font-medium px-1.5 py-0.5 text-green-800 bg-green-500/10 rounded-full capitalize;
+    }
+
+    .badge-info {
+        @apply text-xs font-heading font-medium px-1.5 py-0.5 text-blue-800 bg-blue-500/10 rounded-full capitalize;
+    }
+
+    .badge-warning {
+        @apply text-xs font-heading font-medium px-1.5 py-0.5 text-yellow-800 bg-yellow-400/20 rounded-full capitalize;
+    }
+
+    .badge-danger {
+        @apply text-xs font-heading font-medium px-1.5 py-0.5 text-red-800 bg-red-500/10 rounded-full capitalize;
+    }
+
+    .badge-neutral {
+        @apply text-xs font-heading font-medium px-1.5 py-0.5 text-gray-700 bg-gray-300/80 rounded-full capitalize;
+    }
+
+    .badge-dark {
+        @apply text-xs font-heading font-medium px-1.5 py-0.5 text-white bg-gray-800 rounded-full capitalize;
+    }
+
+
+    .alert {
+        @apply text-slate-600 border-slate-600 bg-slate-100 p-2 border-1 rounded-md
+    }
+
+    .alert-info {
+        @apply text-blue-600  border-blue-600 bg-blue-100
+    }
+
+    .alert-danger {
+        @apply text-red-700  border-red-600 bg-red-100
+    }
+
+    swiper-container {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    swiper-container::part(button-next) {
+        @apply text-gray-200 bg-black/60 rounded-full w-[35px] h-[35px] flex justify-center items-center;
+    }
+
+    swiper-container::part(button-prev) {
+        @apply text-gray-200 bg-black/60 rounded-full w-[35px] h-[35px] flex justify-center items-center;
+    }
 }
+

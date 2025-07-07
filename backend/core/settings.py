@@ -232,14 +232,14 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ],
 
-    'DEFAULT_THROTTLE_CLASSES': [
-        'rest_framework.throttling.AnonRateThrottle',  # Rate limiting for anonymous users
-        'rest_framework.throttling.UserRateThrottle',  # Rate limiting for authenticated users
-    ],
-    'DEFAULT_THROTTLE_RATES': {
-        'anon': '100/day',  # Limit anonymous users to 100 requests per day
-        'user': '1000/day',  # Limit authenticated users to 1000 requests per day
-    },
+    # 'DEFAULT_THROTTLE_CLASSES': [
+    #     'rest_framework.throttling.AnonRateThrottle',  # Rate limiting for anonymous users
+    #     'rest_framework.throttling.UserRateThrottle',  # Rate limiting for authenticated users
+    # ],
+    # 'DEFAULT_THROTTLE_RATES': {
+    #     'anon': '100/day',  # Limit anonymous users to 100 requests per day
+    #     'user': '1000/day',  # Limit authenticated users to 1000 requests per day
+    # },
 
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 25,
@@ -276,7 +276,7 @@ STRIPE_WEBHOOK_KEY = env("STRIPE_WEBHOOK_KEY", default="whsec_***")
 
 SERVER_DOMAIN = env("SERVER_DOMAIN", default="http://127.0.0.1:8000")
 # eg. react,svelte...etc
-FRONTEND_DOMAIN = env("FRONTEND_DOMAIN", default="http://127.0.0.1:8000")
+FRONTEND_DOMAIN = env("FRONTEND_DOMAIN", default="http://localhost:5173")
 
 CORS_ALLOWED_ORIGINS = [SERVER_DOMAIN, FRONTEND_DOMAIN]
 
