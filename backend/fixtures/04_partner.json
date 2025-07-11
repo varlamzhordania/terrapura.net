@@ -1,0 +1,1182 @@
+[
+  {
+    "model": "partners.region",
+    "pk": 1,
+    "fields": {
+      "name": "Region 1",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.region",
+    "pk": 2,
+    "fields": {
+      "name": "Region 2",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.region",
+    "pk": 3,
+    "fields": {
+      "name": "Region 3",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.region",
+    "pk": 4,
+    "fields": {
+      "name": "Region 4",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.region",
+    "pk": 5,
+    "fields": {
+      "name": "Region 5",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.country",
+    "pk": 1,
+    "fields": {
+      "name": "Country 1",
+      "iso_code": "C01",
+      "region": 1,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.country",
+    "pk": 2,
+    "fields": {
+      "name": "Country 2",
+      "iso_code": "C02",
+      "region": 1,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.country",
+    "pk": 3,
+    "fields": {
+      "name": "Country 3",
+      "iso_code": "C03",
+      "region": 5,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.country",
+    "pk": 4,
+    "fields": {
+      "name": "Country 4",
+      "iso_code": "C04",
+      "region": 2,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.country",
+    "pk": 5,
+    "fields": {
+      "name": "Country 5",
+      "iso_code": "C05",
+      "region": 4,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.country",
+    "pk": 6,
+    "fields": {
+      "name": "Country 6",
+      "iso_code": "C06",
+      "region": 3,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.country",
+    "pk": 7,
+    "fields": {
+      "name": "Country 7",
+      "iso_code": "C07",
+      "region": 4,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.country",
+    "pk": 8,
+    "fields": {
+      "name": "Country 8",
+      "iso_code": "C08",
+      "region": 3,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.country",
+    "pk": 9,
+    "fields": {
+      "name": "Country 9",
+      "iso_code": "C09",
+      "region": 3,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.country",
+    "pk": 10,
+    "fields": {
+      "name": "Country 10",
+      "iso_code": "C10",
+      "region": 5,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partner",
+    "pk": 1,
+    "fields": {
+      "name": "Partner 1",
+      "country": 5,
+      "address": "123 Partner Street 1",
+      "website": "https://partner1.com",
+      "description": "Partner 1 is a trusted organization offering services.",
+      "verified": true,
+      "rating": 4.07,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partner",
+    "pk": 2,
+    "fields": {
+      "name": "Partner 2",
+      "country": 9,
+      "address": "123 Partner Street 2",
+      "website": "https://partner2.com",
+      "description": "Partner 2 is a trusted organization offering services.",
+      "verified": false,
+      "rating": 4.51,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partner",
+    "pk": 3,
+    "fields": {
+      "name": "Partner 3",
+      "country": 8,
+      "address": "123 Partner Street 3",
+      "website": "https://partner3.com",
+      "description": "Partner 3 is a trusted organization offering services.",
+      "verified": true,
+      "rating": 3.5,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partner",
+    "pk": 4,
+    "fields": {
+      "name": "Partner 4",
+      "country": 3,
+      "address": "123 Partner Street 4",
+      "website": "https://partner4.com",
+      "description": "Partner 4 is a trusted organization offering services.",
+      "verified": false,
+      "rating": 4.43,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partner",
+    "pk": 5,
+    "fields": {
+      "name": "Partner 5",
+      "country": 9,
+      "address": "123 Partner Street 5",
+      "website": "https://partner5.com",
+      "description": "Partner 5 is a trusted organization offering services.",
+      "verified": true,
+      "rating": 4.08,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partner",
+    "pk": 6,
+    "fields": {
+      "name": "Partner 6",
+      "country": 3,
+      "address": "123 Partner Street 6",
+      "website": "https://partner6.com",
+      "description": "Partner 6 is a trusted organization offering services.",
+      "verified": false,
+      "rating": 4.42,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partner",
+    "pk": 7,
+    "fields": {
+      "name": "Partner 7",
+      "country": 9,
+      "address": "123 Partner Street 7",
+      "website": "https://partner7.com",
+      "description": "Partner 7 is a trusted organization offering services.",
+      "verified": true,
+      "rating": 4.01,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partner",
+    "pk": 8,
+    "fields": {
+      "name": "Partner 8",
+      "country": 10,
+      "address": "123 Partner Street 8",
+      "website": "https://partner8.com",
+      "description": "Partner 8 is a trusted organization offering services.",
+      "verified": false,
+      "rating": 4.36,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partner",
+    "pk": 9,
+    "fields": {
+      "name": "Partner 9",
+      "country": 2,
+      "address": "123 Partner Street 9",
+      "website": "https://partner9.com",
+      "description": "Partner 9 is a trusted organization offering services.",
+      "verified": true,
+      "rating": 3.25,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partner",
+    "pk": 10,
+    "fields": {
+      "name": "Partner 10",
+      "country": 9,
+      "address": "123 Partner Street 10",
+      "website": "https://partner10.com",
+      "description": "Partner 10 is a trusted organization offering services.",
+      "verified": false,
+      "rating": 3.52,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnerwallet",
+    "pk": 1,
+    "fields": {
+      "partner": 1,
+      "balance": 4515.13,
+      "currency": 1,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnerwallet",
+    "pk": 2,
+    "fields": {
+      "partner": 2,
+      "balance": 1646.99,
+      "currency": 1,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnerwallet",
+    "pk": 3,
+    "fields": {
+      "partner": 3,
+      "balance": 4530.47,
+      "currency": 2,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnerwallet",
+    "pk": 4,
+    "fields": {
+      "partner": 4,
+      "balance": 1797.06,
+      "currency": 1,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnerwallet",
+    "pk": 5,
+    "fields": {
+      "partner": 5,
+      "balance": 2665.28,
+      "currency": 3,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnerwallet",
+    "pk": 6,
+    "fields": {
+      "partner": 6,
+      "balance": 3295.31,
+      "currency": 2,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnerwallet",
+    "pk": 7,
+    "fields": {
+      "partner": 7,
+      "balance": 4542.86,
+      "currency": 3,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnerwallet",
+    "pk": 8,
+    "fields": {
+      "partner": 8,
+      "balance": 3614.15,
+      "currency": 1,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnerwallet",
+    "pk": 9,
+    "fields": {
+      "partner": 9,
+      "balance": 2024.91,
+      "currency": 2,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnerwallet",
+    "pk": 10,
+    "fields": {
+      "partner": 10,
+      "balance": 4029.79,
+      "currency": 1,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnercontact",
+    "pk": 1,
+    "fields": {
+      "partner": 10,
+      "name": "Contact 1",
+      "type": "phone",
+      "value": "+1234567891",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnercontact",
+    "pk": 2,
+    "fields": {
+      "partner": 10,
+      "name": "Contact 2",
+      "type": "email",
+      "value": "contact2@mail.com",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnercontact",
+    "pk": 3,
+    "fields": {
+      "partner": 6,
+      "name": "Contact 3",
+      "type": "email",
+      "value": "+1234567893",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnercontact",
+    "pk": 4,
+    "fields": {
+      "partner": 5,
+      "name": "Contact 4",
+      "type": "phone",
+      "value": "contact4@mail.com",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnercontact",
+    "pk": 5,
+    "fields": {
+      "partner": 1,
+      "name": "Contact 5",
+      "type": "email",
+      "value": "+1234567895",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnercontact",
+    "pk": 6,
+    "fields": {
+      "partner": 1,
+      "name": "Contact 6",
+      "type": "email",
+      "value": "contact6@mail.com",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnercontact",
+    "pk": 7,
+    "fields": {
+      "partner": 4,
+      "name": "Contact 7",
+      "type": "phone",
+      "value": "+1234567897",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnercontact",
+    "pk": 8,
+    "fields": {
+      "partner": 7,
+      "name": "Contact 8",
+      "type": "email",
+      "value": "contact8@mail.com",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnercontact",
+    "pk": 9,
+    "fields": {
+      "partner": 6,
+      "name": "Contact 9",
+      "type": "phone",
+      "value": "+1234567899",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnercontact",
+    "pk": 10,
+    "fields": {
+      "partner": 4,
+      "name": "Contact 10",
+      "type": "email",
+      "value": "contact10@mail.com",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnercontact",
+    "pk": 11,
+    "fields": {
+      "partner": 6,
+      "name": "Contact 11",
+      "type": "phone",
+      "value": "+12345678911",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnercontact",
+    "pk": 12,
+    "fields": {
+      "partner": 4,
+      "name": "Contact 12",
+      "type": "phone",
+      "value": "contact12@mail.com",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnercontact",
+    "pk": 13,
+    "fields": {
+      "partner": 8,
+      "name": "Contact 13",
+      "type": "phone",
+      "value": "+12345678913",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnercontact",
+    "pk": 14,
+    "fields": {
+      "partner": 5,
+      "name": "Contact 14",
+      "type": "email",
+      "value": "contact14@mail.com",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnercontact",
+    "pk": 15,
+    "fields": {
+      "partner": 8,
+      "name": "Contact 15",
+      "type": "email",
+      "value": "+12345678915",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnercontact",
+    "pk": 16,
+    "fields": {
+      "partner": 4,
+      "name": "Contact 16",
+      "type": "phone",
+      "value": "contact16@mail.com",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnercontact",
+    "pk": 17,
+    "fields": {
+      "partner": 5,
+      "name": "Contact 17",
+      "type": "phone",
+      "value": "+12345678917",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnercontact",
+    "pk": 18,
+    "fields": {
+      "partner": 6,
+      "name": "Contact 18",
+      "type": "email",
+      "value": "contact18@mail.com",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnercontact",
+    "pk": 19,
+    "fields": {
+      "partner": 4,
+      "name": "Contact 19",
+      "type": "email",
+      "value": "+12345678919",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnercontact",
+    "pk": 20,
+    "fields": {
+      "partner": 9,
+      "name": "Contact 20",
+      "type": "email",
+      "value": "contact20@mail.com",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 1,
+    "fields": {
+      "partner": 2,
+      "user": 5,
+      "role": "manager",
+      "is_active": true,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404"
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 2,
+    "fields": {
+      "partner": 7,
+      "user": 3,
+      "role": "viewer",
+      "is_active": true,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404"
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 3,
+    "fields": {
+      "partner": 5,
+      "user": 5,
+      "role": "admin",
+      "is_active": true,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404"
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 4,
+    "fields": {
+      "partner": 2,
+      "user": 2,
+      "role": "viewer",
+      "is_active": true,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404"
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 5,
+    "fields": {
+      "partner": 2,
+      "user": 4,
+      "role": "admin",
+      "is_active": true,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404"
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 6,
+    "fields": {
+      "partner": 9,
+      "user": 4,
+      "role": "manager",
+      "is_active": true,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404"
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 7,
+    "fields": {
+      "partner": 8,
+      "user": 5,
+      "role": "admin",
+      "is_active": true,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404"
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 8,
+    "fields": {
+      "partner": 5,
+      "user": 2,
+      "role": "manager",
+      "is_active": true,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404"
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 9,
+    "fields": {
+      "partner": 6,
+      "user": 3,
+      "role": "viewer",
+      "is_active": true,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404"
+    }
+  },
+  {
+    "model": "partners.partnerstaff",
+    "pk": 10,
+    "fields": {
+      "partner": 4,
+      "user": 3,
+      "role": "viewer",
+      "is_active": true,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404"
+    }
+  },
+  {
+    "model": "partners.partnerreview",
+    "pk": 1,
+    "fields": {
+      "partner": 8,
+      "user": 3,
+      "rating": 3,
+      "comment": "This is a review 1",
+      "approved": true,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnerreview",
+    "pk": 2,
+    "fields": {
+      "partner": 5,
+      "user": 4,
+      "rating": 4,
+      "comment": "This is a review 2",
+      "approved": true,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnerreview",
+    "pk": 3,
+    "fields": {
+      "partner": 2,
+      "user": 2,
+      "rating": 4,
+      "comment": "This is a review 3",
+      "approved": true,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnerreview",
+    "pk": 4,
+    "fields": {
+      "partner": 8,
+      "user": 4,
+      "rating": 5,
+      "comment": "This is a review 4",
+      "approved": true,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnerreview",
+    "pk": 5,
+    "fields": {
+      "partner": 7,
+      "user": 5,
+      "rating": 3,
+      "comment": "This is a review 5",
+      "approved": true,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnerreview",
+    "pk": 6,
+    "fields": {
+      "partner": 3,
+      "user": 3,
+      "rating": 5,
+      "comment": "This is a review 6",
+      "approved": true,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnerreview",
+    "pk": 7,
+    "fields": {
+      "partner": 1,
+      "user": 3,
+      "rating": 4,
+      "comment": "This is a review 7",
+      "approved": true,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnerreview",
+    "pk": 8,
+    "fields": {
+      "partner": 4,
+      "user": 2,
+      "rating": 4,
+      "comment": "This is a review 8",
+      "approved": true,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnerreview",
+    "pk": 9,
+    "fields": {
+      "partner": 9,
+      "user": 2,
+      "rating": 5,
+      "comment": "This is a review 9",
+      "approved": true,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.partnerreview",
+    "pk": 10,
+    "fields": {
+      "partner": 6,
+      "user": 2,
+      "rating": 3,
+      "comment": "This is a review 10",
+      "approved": true,
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.wallettransaction",
+    "pk": 1,
+    "fields": {
+      "wallet": 3,
+      "amount": 191.82,
+      "type": "credit",
+      "purpose": "Transaction 1",
+      "reference": "TXN00001",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.wallettransaction",
+    "pk": 2,
+    "fields": {
+      "wallet": 3,
+      "amount": 174.46,
+      "type": "debit",
+      "purpose": "Transaction 2",
+      "reference": "TXN00002",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.wallettransaction",
+    "pk": 3,
+    "fields": {
+      "wallet": 1,
+      "amount": 154.04,
+      "type": "credit",
+      "purpose": "Transaction 3",
+      "reference": "TXN00003",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.wallettransaction",
+    "pk": 4,
+    "fields": {
+      "wallet": 5,
+      "amount": 249.31,
+      "type": "credit",
+      "purpose": "Transaction 4",
+      "reference": "TXN00004",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.wallettransaction",
+    "pk": 5,
+    "fields": {
+      "wallet": 9,
+      "amount": 250.18,
+      "type": "credit",
+      "purpose": "Transaction 5",
+      "reference": "TXN00005",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.wallettransaction",
+    "pk": 6,
+    "fields": {
+      "wallet": 10,
+      "amount": 68.33,
+      "type": "debit",
+      "purpose": "Transaction 6",
+      "reference": "TXN00006",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.wallettransaction",
+    "pk": 7,
+    "fields": {
+      "wallet": 2,
+      "amount": 82.98,
+      "type": "credit",
+      "purpose": "Transaction 7",
+      "reference": "TXN00007",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.wallettransaction",
+    "pk": 8,
+    "fields": {
+      "wallet": 4,
+      "amount": 142.16,
+      "type": "credit",
+      "purpose": "Transaction 8",
+      "reference": "TXN00008",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.wallettransaction",
+    "pk": 9,
+    "fields": {
+      "wallet": 8,
+      "amount": 248.86,
+      "type": "debit",
+      "purpose": "Transaction 9",
+      "reference": "TXN00009",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.wallettransaction",
+    "pk": 10,
+    "fields": {
+      "wallet": 5,
+      "amount": 34.81,
+      "type": "credit",
+      "purpose": "Transaction 10",
+      "reference": "TXN00010",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.wallettransaction",
+    "pk": 11,
+    "fields": {
+      "wallet": 10,
+      "amount": 285.34,
+      "type": "debit",
+      "purpose": "Transaction 11",
+      "reference": "TXN00011",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.wallettransaction",
+    "pk": 12,
+    "fields": {
+      "wallet": 1,
+      "amount": 276.43,
+      "type": "debit",
+      "purpose": "Transaction 12",
+      "reference": "TXN00012",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.wallettransaction",
+    "pk": 13,
+    "fields": {
+      "wallet": 10,
+      "amount": 232.83,
+      "type": "credit",
+      "purpose": "Transaction 13",
+      "reference": "TXN00013",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.wallettransaction",
+    "pk": 14,
+    "fields": {
+      "wallet": 6,
+      "amount": 33.47,
+      "type": "debit",
+      "purpose": "Transaction 14",
+      "reference": "TXN00014",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  },
+  {
+    "model": "partners.wallettransaction",
+    "pk": 15,
+    "fields": {
+      "wallet": 5,
+      "amount": 245.85,
+      "type": "debit",
+      "purpose": "Transaction 15",
+      "reference": "TXN00015",
+      "created_at": "2025-07-07T20:27:12.353404",
+      "updated_at": "2025-07-07T20:27:12.353404",
+      "is_active": true
+    }
+  }
+]

@@ -212,7 +212,6 @@
         }
     ];
 
-
     register();
     let swiperTrendHerbs;
     const swiperTrendHerbsBreakPoints = {

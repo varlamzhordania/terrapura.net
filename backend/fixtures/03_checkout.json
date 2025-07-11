@@ -1,0 +1,29 @@
+[
+  {
+    "model": "checkout.currency",
+    "pk": 1,
+    "fields": {
+      "code": "USD",
+      "name": "US Dollar",
+      "symbol": "$"
+    }
+  },
+  {
+    "model": "checkout.currency",
+    "pk": 2,
+    "fields": {
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }
+  },
+  {
+    "model": "checkout.currency",
+    "pk": 3,
+    "fields": {
+      "code": "GBP",
+      "name": "British Pound",
+      "symbol": "£"
+    }
+  }
+]

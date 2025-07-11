@@ -128,6 +128,7 @@ class HerbSEOSerializer(serializers.ModelSerializer):
     class Meta:
         model = Herb
         fields = [
+                     'id',
                      'name',
                      'slug',
                      'latin_name',

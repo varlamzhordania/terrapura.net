@@ -46,6 +46,26 @@ export async function fetchHerbDetail(slug) {
     return await res.json();
 }
 
+export async function fetchHerbOffers(slug) {
+    const res = await fetch(API_ENDPOINTS.herbs.herbOffers(slug));
+
+    if (!res.ok) {
+        let errDetail = `Failed to fetch offers for herb: ${slug}`;
+        try {
+            const data = await res.json();
+            if (data.detail) errDetail = data.detail;
+        } catch (_) {
+            // fallback to default message
+        }
+
+        const err = new Error(errDetail);
+        err.status = res.status;
+        throw err;
+    }
+
+    return await res.json();
+}
+
 
 export async function fetchCategories({pagination = false} = {}) {
     const params = new URLSearchParams();

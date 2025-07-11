@@ -1,0 +1,58 @@
+[
+  {
+    "model": "account.user",
+    "pk": 2,
+    "fields": {
+      "email": "user2@example.com",
+      "first_name": "User2",
+      "last_name": "Example",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "last_login": "2025-07-07T20:27:12.353404",
+      "date_joined": "2025-07-07T20:27:12.353404"
+    }
+  },
+  {
+    "model": "account.user",
+    "pk": 3,
+    "fields": {
+      "email": "user3@example.com",
+      "first_name": "User3",
+      "last_name": "Example",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "last_login": "2025-07-07T20:27:12.353404",
+      "date_joined": "2025-07-07T20:27:12.353404"
+    }
+  },
+  {
+    "model": "account.user",
+    "pk": 4,
+    "fields": {
+      "email": "user4@example.com",
+      "first_name": "User4",
+      "last_name": "Example",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "last_login": "2025-07-07T20:27:12.353404",
+      "date_joined": "2025-07-07T20:27:12.353404"
+    }
+  },
+  {
+    "model": "account.user",
+    "pk": 5,
+    "fields": {
+      "email": "user5@example.com",
+      "first_name": "User5",
+      "last_name": "Example",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "last_login": "2025-07-07T20:27:12.353404",
+      "date_joined": "2025-07-07T20:27:12.353404"
+    }
+  }
+]

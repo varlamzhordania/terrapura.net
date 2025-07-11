@@ -107,7 +107,7 @@
 </script>
 
 {#snippet Category(data)}
-    <li class="flex justify-start items-center">
+    <li class="flex justify-start items-center space-x-2" title={data.name}>
         <input type="checkbox" id="category-{data.slug}" name="category" class="form-control-checkbox"
                value={data.slug}
                bind:group={selectedCategory}
@@ -120,7 +120,7 @@
 {/snippet}
 
 {#snippet Tag(data)}
-    <li class="flex justify-start items-center">
+    <li class="flex justify-start items-center space-x-2" title={data.name}>
         <input type="checkbox" id="tag-{data.slug}" name="tag" class="form-control-checkbox"
                value={data.slug}
                bind:group={selectedTags}
@@ -133,13 +133,13 @@
 {/snippet}
 
 {#snippet Symptom(data)}
-    <li class="flex justify-start items-center">
+    <li class="flex justify-start items-center space-x-2" title={data.name}>
         <input type="checkbox" id="symptom-{data.slug}" name="symptom" class="form-control-checkbox"
                value={data.slug}
                bind:group={selectedSymptoms}
                onchange={()=> loadHerbs()}
         >
-        <label for="symptom-{data.slug}" class="form-control-label text-sm text-slate-500">
+        <label for="symptom-{data.slug}" class="form-control-label text-sm text-slate-500" >
             {data.name}
         </label>
     </li>

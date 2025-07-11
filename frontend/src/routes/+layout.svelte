@@ -4,6 +4,7 @@
     import {slide} from "svelte/transition"
     import {faBars, faMagnifyingGlass, faCartShopping, faUser} from "@fortawesome/free-solid-svg-icons";
     import {authState, clearAuth, setAuth} from "$lib/states/auth.svelte.js";
+    import {basket} from "$lib/states/basket.svelte.js";
 
     let {children, data} = $props();
 
@@ -79,8 +80,11 @@
             <button class="btn">
                 <Fa icon={faMagnifyingGlass} size="lg"/>
             </button>
-            <button class="btn">
+            <button class="btn relative">
                 <Fa icon={faCartShopping} size="lg"/>
+                <span class="absolute right-1 -top-0.5 bg-primary-700 text-white rounded-full text-xs font-light min-w-4 w-auto h-4 px-0.5 ring-2 ring-white">
+                {basket.total_offer}
+                </span>
             </button>
             {#if authState.logged_in}
                 <div class="relative" bind:this={dropDownEl}>

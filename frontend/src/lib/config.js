@@ -7,6 +7,7 @@ export const API_ENDPOINTS = {
     herbs: {
         self: `${API_BASE}/herbs/`,
         herbDetail: (slug) => `${API_BASE}/herbs/${slug}/`,
+        herbOffers: (slug) => `${API_BASE}/herbs/${slug}/offers/`,
         categories: `${API_BASE}/herbs/categories/`,
         tags: `${API_BASE}/herbs/tags/`,
         symptoms: `${API_BASE}/herbs/symptoms/`,

@@ -1,0 +1,2242 @@
+[
+  {
+    "model": "herbs.category",
+    "pk": 1,
+    "fields": {
+      "name": "Immune Support",
+      "slug": "immune-support",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.category",
+    "pk": 2,
+    "fields": {
+      "name": "Digestive Health",
+      "slug": "digestive-health",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.category",
+    "pk": 3,
+    "fields": {
+      "name": "Skin Care",
+      "slug": "skin-care",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.category",
+    "pk": 4,
+    "fields": {
+      "name": "Detox",
+      "slug": "detox",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.category",
+    "pk": 5,
+    "fields": {
+      "name": "Respiratory Health",
+      "slug": "respiratory-health",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.category",
+    "pk": 6,
+    "fields": {
+      "name": "Cardiovascular Health",
+      "slug": "cardiovascular-health",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.category",
+    "pk": 7,
+    "fields": {
+      "name": "Cognitive Support",
+      "slug": "cognitive-support",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.category",
+    "pk": 8,
+    "fields": {
+      "name": "Anti-Inflammatory",
+      "slug": "anti-inflammatory",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.category",
+    "pk": 9,
+    "fields": {
+      "name": "Antioxidants",
+      "slug": "antioxidants",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.category",
+    "pk": 10,
+    "fields": {
+      "name": "Sleep Aid",
+      "slug": "sleep-aid",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.category",
+    "pk": 11,
+    "fields": {
+      "name": "Stress Relief",
+      "slug": "stress-relief",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.category",
+    "pk": 12,
+    "fields": {
+      "name": "Women's Health",
+      "slug": "women's-health",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.category",
+    "pk": 13,
+    "fields": {
+      "name": "Men's Health",
+      "slug": "men's-health",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.category",
+    "pk": 14,
+    "fields": {
+      "name": "Bone Health",
+      "slug": "bone-health",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.category",
+    "pk": 15,
+    "fields": {
+      "name": "Energy Boost",
+      "slug": "energy-boost",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.category",
+    "pk": 16,
+    "fields": {
+      "name": "Weight Management",
+      "slug": "weight-management",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.category",
+    "pk": 17,
+    "fields": {
+      "name": "Blood Sugar Balance",
+      "slug": "blood-sugar-balance",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.category",
+    "pk": 18,
+    "fields": {
+      "name": "Liver Support",
+      "slug": "liver-support",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.category",
+    "pk": 19,
+    "fields": {
+      "name": "Vision Support",
+      "slug": "vision-support",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.category",
+    "pk": 20,
+    "fields": {
+      "name": "Urinary Health",
+      "slug": "urinary-health",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.tag",
+    "pk": 1,
+    "fields": {
+      "name": "Organic",
+      "slug": "organic",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.tag",
+    "pk": 2,
+    "fields": {
+      "name": "Anti-inflammatory",
+      "slug": "anti-inflammatory",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.tag",
+    "pk": 3,
+    "fields": {
+      "name": "Adaptogen",
+      "slug": "adaptogen",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.tag",
+    "pk": 4,
+    "fields": {
+      "name": "Wildcrafted",
+      "slug": "wildcrafted",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.tag",
+    "pk": 5,
+    "fields": {
+      "name": "Non-GMO",
+      "slug": "non-gmo",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.tag",
+    "pk": 6,
+    "fields": {
+      "name": "Caffeine-free",
+      "slug": "caffeine-free",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.tag",
+    "pk": 7,
+    "fields": {
+      "name": "Vegan",
+      "slug": "vegan",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.tag",
+    "pk": 8,
+    "fields": {
+      "name": "Gluten-free",
+      "slug": "gluten-free",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.tag",
+    "pk": 9,
+    "fields": {
+      "name": "Raw",
+      "slug": "raw",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.tag",
+    "pk": 10,
+    "fields": {
+      "name": "Kosher",
+      "slug": "kosher",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.tag",
+    "pk": 11,
+    "fields": {
+      "name": "Fermented",
+      "slug": "fermented",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.tag",
+    "pk": 12,
+    "fields": {
+      "name": "Whole Plant",
+      "slug": "whole-plant",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.tag",
+    "pk": 13,
+    "fields": {
+      "name": "Essential Oil",
+      "slug": "essential-oil",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.tag",
+    "pk": 14,
+    "fields": {
+      "name": "Ayurvedic",
+      "slug": "ayurvedic",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.tag",
+    "pk": 15,
+    "fields": {
+      "name": "Traditional Chinese Medicine",
+      "slug": "traditional-chinese-medicine",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.tag",
+    "pk": 16,
+    "fields": {
+      "name": "Cooling",
+      "slug": "cooling",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.tag",
+    "pk": 17,
+    "fields": {
+      "name": "Warming",
+      "slug": "warming",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.tag",
+    "pk": 18,
+    "fields": {
+      "name": "Stimulating",
+      "slug": "stimulating",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.tag",
+    "pk": 19,
+    "fields": {
+      "name": "Soothing",
+      "slug": "soothing",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.tag",
+    "pk": 20,
+    "fields": {
+      "name": "Diuretic",
+      "slug": "diuretic",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.ailment",
+    "pk": 1,
+    "fields": {
+      "name": "Cold",
+      "slug": "cold",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.ailment",
+    "pk": 2,
+    "fields": {
+      "name": "Flu",
+      "slug": "flu",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.ailment",
+    "pk": 3,
+    "fields": {
+      "name": "Indigestion",
+      "slug": "indigestion",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.ailment",
+    "pk": 4,
+    "fields": {
+      "name": "Constipation",
+      "slug": "constipation",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.ailment",
+    "pk": 5,
+    "fields": {
+      "name": "Acne",
+      "slug": "acne",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.ailment",
+    "pk": 6,
+    "fields": {
+      "name": "Fatigue",
+      "slug": "fatigue",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.ailment",
+    "pk": 7,
+    "fields": {
+      "name": "Joint Pain",
+      "slug": "joint-pain",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.ailment",
+    "pk": 8,
+    "fields": {
+      "name": "Anxiety",
+      "slug": "anxiety",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.ailment",
+    "pk": 9,
+    "fields": {
+      "name": "Depression",
+      "slug": "depression",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.ailment",
+    "pk": 10,
+    "fields": {
+      "name": "Headaches",
+      "slug": "headaches",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.ailment",
+    "pk": 11,
+    "fields": {
+      "name": "Insomnia",
+      "slug": "insomnia",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.ailment",
+    "pk": 12,
+    "fields": {
+      "name": "Cough",
+      "slug": "cough",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.ailment",
+    "pk": 13,
+    "fields": {
+      "name": "High Cholesterol",
+      "slug": "high-cholesterol",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.ailment",
+    "pk": 14,
+    "fields": {
+      "name": "Hypertension",
+      "slug": "hypertension",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.ailment",
+    "pk": 15,
+    "fields": {
+      "name": "Allergies",
+      "slug": "allergies",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.ailment",
+    "pk": 16,
+    "fields": {
+      "name": "Diabetes",
+      "slug": "diabetes",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.ailment",
+    "pk": 17,
+    "fields": {
+      "name": "PMS",
+      "slug": "pms",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.ailment",
+    "pk": 18,
+    "fields": {
+      "name": "Eczema",
+      "slug": "eczema",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.ailment",
+    "pk": 19,
+    "fields": {
+      "name": "Arthritis",
+      "slug": "arthritis",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.ailment",
+    "pk": 20,
+    "fields": {
+      "name": "Nausea",
+      "slug": "nausea",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.sideeffect",
+    "pk": 1,
+    "fields": {
+      "name": "Nausea",
+      "slug": "nausea",
+      "description": "Able if bit local usually four.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.sideeffect",
+    "pk": 2,
+    "fields": {
+      "name": "Headache",
+      "slug": "headache",
+      "description": "Society another though stuff trade education he difficult bill pattern such return.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.sideeffect",
+    "pk": 3,
+    "fields": {
+      "name": "Drowsiness",
+      "slug": "drowsiness",
+      "description": "Energy customer you last matter agent forward building affect section.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.sideeffect",
+    "pk": 4,
+    "fields": {
+      "name": "Upset Stomach",
+      "slug": "upset-stomach",
+      "description": "Six do mean soon task international college.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.sideeffect",
+    "pk": 5,
+    "fields": {
+      "name": "Allergic Reaction",
+      "slug": "allergic-reaction",
+      "description": "Defense career girl nearly think air.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.sideeffect",
+    "pk": 6,
+    "fields": {
+      "name": "Dry Mouth",
+      "slug": "dry-mouth",
+      "description": "Only just center glass picture successful point work.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.sideeffect",
+    "pk": 7,
+    "fields": {
+      "name": "Dizziness",
+      "slug": "dizziness",
+      "description": "Who world into enter computer on believe head war box.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.sideeffect",
+    "pk": 8,
+    "fields": {
+      "name": "Insomnia",
+      "slug": "insomnia",
+      "description": "Fear friend score today class represent order ask learn mouth end.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.sideeffect",
+    "pk": 9,
+    "fields": {
+      "name": "Photosensitivity",
+      "slug": "photosensitivity",
+      "description": "Situation someone southern officer fund herself my.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.sideeffect",
+    "pk": 10,
+    "fields": {
+      "name": "Diarrhea",
+      "slug": "diarrhea",
+      "description": "Strong last body activity rock he recent site such view.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.sideeffect",
+    "pk": 11,
+    "fields": {
+      "name": "Liver Damage",
+      "slug": "liver-damage",
+      "description": "Even these current once believe tough.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.sideeffect",
+    "pk": 12,
+    "fields": {
+      "name": "Kidney Damage",
+      "slug": "kidney-damage",
+      "description": "Good always major summer phone front.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.sideeffect",
+    "pk": 13,
+    "fields": {
+      "name": "Increased Heart Rate",
+      "slug": "increased-heart-rate",
+      "description": "She tax manage us wife conference dog.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.sideeffect",
+    "pk": 14,
+    "fields": {
+      "name": "Low Blood Pressure",
+      "slug": "low-blood-pressure",
+      "description": "Scene subject fly TV model determine spring cup participant several attack.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.sideeffect",
+    "pk": 15,
+    "fields": {
+      "name": "High Blood Pressure",
+      "slug": "high-blood-pressure",
+      "description": "Relationship everybody for fill eat special movement.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.sideeffect",
+    "pk": 16,
+    "fields": {
+      "name": "Blood Thinning",
+      "slug": "blood-thinning",
+      "description": "Often operation economic sense everything leave thousand away attorney somebody beautiful employee light.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.sideeffect",
+    "pk": 17,
+    "fields": {
+      "name": "Constipation",
+      "slug": "constipation",
+      "description": "Investment in future find large available brother heart man section firm evening.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.sideeffect",
+    "pk": 18,
+    "fields": {
+      "name": "Skin Rash",
+      "slug": "skin-rash",
+      "description": "Newspaper baby cell police blood give bank save very that note daughter.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.sideeffect",
+    "pk": 19,
+    "fields": {
+      "name": "Hormonal Imbalance",
+      "slug": "hormonal-imbalance",
+      "description": "Situation someone state source trial seem condition skill.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.sideeffect",
+    "pk": 20,
+    "fields": {
+      "name": "Hallucinations",
+      "slug": "hallucinations",
+      "description": "For despite probably interest he present law range money building capital place.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.symptom",
+    "pk": 1,
+    "fields": {
+      "name": "Fever",
+      "slug": "fever",
+      "description": "Year throw wish enough explain Republican raise student.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.symptom",
+    "pk": 2,
+    "fields": {
+      "name": "Fatigue",
+      "slug": "fatigue",
+      "description": "View less reveal role material language gun indicate wife whole do of foreign.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.symptom",
+    "pk": 3,
+    "fields": {
+      "name": "Pain",
+      "slug": "pain",
+      "description": "Dark other top center audience court could story amount most goal.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.symptom",
+    "pk": 4,
+    "fields": {
+      "name": "Bloating",
+      "slug": "bloating",
+      "description": "Management can thousand certainly until spring fear measure.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.symptom",
+    "pk": 5,
+    "fields": {
+      "name": "Cramping",
+      "slug": "cramping",
+      "description": "Officer politics simple health wish us eat.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.symptom",
+    "pk": 6,
+    "fields": {
+      "name": "Inflammation",
+      "slug": "inflammation",
+      "description": "Factor nice culture wind produce tax half window bit TV capital.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.symptom",
+    "pk": 7,
+    "fields": {
+      "name": "Sneezing",
+      "slug": "sneezing",
+      "description": "Figure guy interest soon number same training.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.symptom",
+    "pk": 8,
+    "fields": {
+      "name": "Coughing",
+      "slug": "coughing",
+      "description": "Store rather quality old indeed sort dog.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.symptom",
+    "pk": 9,
+    "fields": {
+      "name": "Sweating",
+      "slug": "sweating",
+      "description": "Window by herself give serious detail throw score well color move early reflect.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.symptom",
+    "pk": 10,
+    "fields": {
+      "name": "Loss of Appetite",
+      "slug": "loss-of-appetite",
+      "description": "Wait officer would safe campaign identify.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.symptom",
+    "pk": 11,
+    "fields": {
+      "name": "Itching",
+      "slug": "itching",
+      "description": "Heavy record result certain success executive change morning time improve within special.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.symptom",
+    "pk": 12,
+    "fields": {
+      "name": "Tingling",
+      "slug": "tingling",
+      "description": "Son interest care shake word anyone newspaper will.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.symptom",
+    "pk": 13,
+    "fields": {
+      "name": "Numbness",
+      "slug": "numbness",
+      "description": "Hour money surface learn area arrive be rate than story world rate money.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.symptom",
+    "pk": 14,
+    "fields": {
+      "name": "Burning",
+      "slug": "burning",
+      "description": "Treatment already road dinner treat second method those both production small employee back.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.symptom",
+    "pk": 15,
+    "fields": {
+      "name": "Nasal Congestion",
+      "slug": "nasal-congestion",
+      "description": "Might material business what town most site.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.symptom",
+    "pk": 16,
+    "fields": {
+      "name": "Tremors",
+      "slug": "tremors",
+      "description": "West modern health conference buy activity point job simple dream act adult.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.symptom",
+    "pk": 17,
+    "fields": {
+      "name": "Swelling",
+      "slug": "swelling",
+      "description": "Item record gas detail camera middle green hold value student within article cold.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.symptom",
+    "pk": 18,
+    "fields": {
+      "name": "Palpitations",
+      "slug": "palpitations",
+      "description": "Account best region story culture new white wife lose.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.symptom",
+    "pk": 19,
+    "fields": {
+      "name": "Shortness of Breath",
+      "slug": "shortness-of-breath",
+      "description": "Fast important southern election name wonder.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.symptom",
+    "pk": 20,
+    "fields": {
+      "name": "Cold Hands",
+      "slug": "cold-hands",
+      "description": "Almost reach discussion area matter stage.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.illness",
+    "pk": 1,
+    "fields": {
+      "name": "Common Cold",
+      "slug": "common-cold",
+      "description": "Despite lay save ability represent market behavior responsibility effect just.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.illness",
+    "pk": 2,
+    "fields": {
+      "name": "Irritable Bowel Syndrome",
+      "slug": "irritable-bowel-syndrome",
+      "description": "Who Mrs professor world enter hundred.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.illness",
+    "pk": 3,
+    "fields": {
+      "name": "Psoriasis",
+      "slug": "psoriasis",
+      "description": "Successful thank list increase why sense economy country point traditional visit conference receive.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.illness",
+    "pk": 4,
+    "fields": {
+      "name": "Asthma",
+      "slug": "asthma",
+      "description": "Mother bar learn no believe identify increase laugh know.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.illness",
+    "pk": 5,
+    "fields": {
+      "name": "Diabetes",
+      "slug": "diabetes",
+      "description": "Trade night top two every argue answer term someone last black discussion.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.illness",
+    "pk": 6,
+    "fields": {
+      "name": "Alzheimer's",
+      "slug": "alzheimer's",
+      "description": "According avoid author forward wide lose sure ability window rule alone someone approach.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.illness",
+    "pk": 7,
+    "fields": {
+      "name": "Cancer",
+      "slug": "cancer",
+      "description": "Throw various thought drive down environment hot order three decide accept.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.illness",
+    "pk": 8,
+    "fields": {
+      "name": "Lupus",
+      "slug": "lupus",
+      "description": "Laugh soldier student at will service.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.illness",
+    "pk": 9,
+    "fields": {
+      "name": "Epilepsy",
+      "slug": "epilepsy",
+      "description": "Surface view yet miss from would claim million white.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.illness",
+    "pk": 10,
+    "fields": {
+      "name": "Hepatitis",
+      "slug": "hepatitis",
+      "description": "Election news herself area least probably stock pattern so family way first.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.illness",
+    "pk": 11,
+    "fields": {
+      "name": "Tuberculosis",
+      "slug": "tuberculosis",
+      "description": "Table take popular and evidence business could red.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.illness",
+    "pk": 12,
+    "fields": {
+      "name": "Lyme Disease",
+      "slug": "lyme-disease",
+      "description": "Similar themselves which than everybody factor end often lay effort heavy police kid.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.illness",
+    "pk": 13,
+    "fields": {
+      "name": "Parkinson's Disease",
+      "slug": "parkinson's-disease",
+      "description": "Better take between upon television ok activity and above list degree room in.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.illness",
+    "pk": 14,
+    "fields": {
+      "name": "Osteoporosis",
+      "slug": "osteoporosis",
+      "description": "National weight though since customer world difficult peace right others speak fund.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.illness",
+    "pk": 15,
+    "fields": {
+      "name": "Anemia",
+      "slug": "anemia",
+      "description": "Rather want into really vote artist to end white sure interview.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.illness",
+    "pk": 16,
+    "fields": {
+      "name": "Glaucoma",
+      "slug": "glaucoma",
+      "description": "Put worker short through opportunity beyond mean.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.illness",
+    "pk": 17,
+    "fields": {
+      "name": "Chronic Fatigue",
+      "slug": "chronic-fatigue",
+      "description": "Style maintain ok nature impact table with.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.illness",
+    "pk": 18,
+    "fields": {
+      "name": "Depression",
+      "slug": "depression",
+      "description": "Nearly to some big any remember occur court home surface risk.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.illness",
+    "pk": 19,
+    "fields": {
+      "name": "Hypertension",
+      "slug": "hypertension",
+      "description": "Today maybe investment home easy art change.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.illness",
+    "pk": 20,
+    "fields": {
+      "name": "Acid Reflux",
+      "slug": "acid-reflux",
+      "description": "Amount west piece owner read subject church seem want future determine affect.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.source",
+    "pk": 1,
+    "fields": {
+      "name": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "description": "Do best participant president country treatment list hear physical road beat upon.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.source",
+    "pk": 2,
+    "fields": {
+      "name": "WebMD",
+      "url": "https://www.webmd.com/",
+      "description": "Herself institution card end my standard either identify because plan along child customer.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.source",
+    "pk": 3,
+    "fields": {
+      "name": "Healthline",
+      "url": "https://www.healthline.com/",
+      "description": "Blood pay vote material five can physical character research.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.source",
+    "pk": 4,
+    "fields": {
+      "name": "NIH",
+      "url": "https://www.nih.gov/",
+      "description": "Expert away cut have early theory response bill.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.source",
+    "pk": 5,
+    "fields": {
+      "name": "Dr. Axe",
+      "url": "https://draxe.com/",
+      "description": "Yourself although while approach six fact entire word enjoy.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.source",
+    "pk": 6,
+    "fields": {
+      "name": "Cleveland Clinic",
+      "url": "https://my.clevelandclinic.org/",
+      "description": "Drop girl few figure least specific myself.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.source",
+    "pk": 7,
+    "fields": {
+      "name": "Mayo Clinic",
+      "url": "https://www.mayoclinic.org/",
+      "description": "Thus throw beyond land opportunity north nor.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.source",
+    "pk": 8,
+    "fields": {
+      "name": "Verywell Health",
+      "url": "https://www.verywellhealth.com/",
+      "description": "Management newspaper attack design different page easy.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.source",
+    "pk": 9,
+    "fields": {
+      "name": "HerbalGram",
+      "url": "https://www.herbalgram.org/",
+      "description": "Opportunity college happy law close by serve consumer take through according.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.source",
+    "pk": 10,
+    "fields": {
+      "name": "Botanical Online",
+      "url": "https://www.botanical-online.com/",
+      "description": "Material cold summer nor hour prove dream customer war hour me want I.",
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.herb",
+    "pk": 1,
+    "fields": {
+      "name": "Echinacea",
+      "slug": "echinacea",
+      "latin_name": "Echinacea purpurea",
+      "description": "Charge apply up radio.",
+      "category": 20,
+      "dosage": "658mg daily",
+      "image_link": "https://example.com/herb1.jpg",
+      "tags": [
+        13,
+        12,
+        1,
+        11
+      ],
+      "ailments": [
+        4
+      ],
+      "side_effects": [
+        4,
+        17
+      ],
+      "symptoms": [
+        15,
+        2,
+        6
+      ],
+      "illnesses": [
+        2
+      ],
+      "sources": [
+        9
+      ],
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.herb",
+    "pk": 2,
+    "fields": {
+      "name": "Ginger",
+      "slug": "ginger",
+      "latin_name": "Zingiber officinale",
+      "description": "There develop end according with. Party generation model gas who stand watch.",
+      "category": 1,
+      "dosage": "305mg daily",
+      "image_link": "https://example.com/herb2.jpg",
+      "tags": [
+        15,
+        19,
+        5
+      ],
+      "ailments": [
+        12,
+        9
+      ],
+      "side_effects": [
+        6
+      ],
+      "symptoms": [
+        3,
+        18,
+        7
+      ],
+      "illnesses": [
+        6,
+        11
+      ],
+      "sources": [
+        8,
+        7,
+        9
+      ],
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.herb",
+    "pk": 3,
+    "fields": {
+      "name": "Turmeric",
+      "slug": "turmeric",
+      "latin_name": "Curcuma longa",
+      "description": "See team hospital mention particular anything yes. Nor wide though who might mission.",
+      "category": 20,
+      "dosage": "223mg daily",
+      "image_link": "https://example.com/herb3.jpg",
+      "tags": [
+        18,
+        1,
+        5,
+        20
+      ],
+      "ailments": [
+        7,
+        15,
+        8
+      ],
+      "side_effects": [],
+      "symptoms": [
+        2,
+        15
+      ],
+      "illnesses": [],
+      "sources": [
+        4,
+        9
+      ],
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.herb",
+    "pk": 4,
+    "fields": {
+      "name": "Chamomile",
+      "slug": "chamomile",
+      "latin_name": "Matricaria chamomilla",
+      "description": "Fish table agent now western understand type case.",
+      "category": 14,
+      "dosage": "216mg daily",
+      "image_link": "https://example.com/herb4.jpg",
+      "tags": [
+        16,
+        2
+      ],
+      "ailments": [
+        14
+      ],
+      "side_effects": [],
+      "symptoms": [
+        5,
+        17,
+        7
+      ],
+      "illnesses": [
+        7,
+        5
+      ],
+      "sources": [
+        10,
+        6
+      ],
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.herb",
+    "pk": 5,
+    "fields": {
+      "name": "Peppermint",
+      "slug": "peppermint",
+      "latin_name": "Mentha piperita",
+      "description": "White your source world experience yard detail level.",
+      "category": 11,
+      "dosage": "904mg daily",
+      "image_link": "https://example.com/herb5.jpg",
+      "tags": [
+        16
+      ],
+      "ailments": [
+        3,
+        15,
+        1
+      ],
+      "side_effects": [
+        16
+      ],
+      "symptoms": [
+        15
+      ],
+      "illnesses": [],
+      "sources": [
+        5,
+        6
+      ],
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.herb",
+    "pk": 6,
+    "fields": {
+      "name": "Lavender",
+      "slug": "lavender",
+      "latin_name": "Lavandula angustifolia",
+      "description": "Throw with enough sure. Claim seem thought may.",
+      "category": 7,
+      "dosage": "690mg daily",
+      "image_link": "https://example.com/herb6.jpg",
+      "tags": [
+        16,
+        8
+      ],
+      "ailments": [
+        13
+      ],
+      "side_effects": [
+        20
+      ],
+      "symptoms": [
+        14
+      ],
+      "illnesses": [
+        8,
+        17
+      ],
+      "sources": [
+        6
+      ],
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.herb",
+    "pk": 7,
+    "fields": {
+      "name": "Aloe Vera",
+      "slug": "aloe-vera",
+      "latin_name": "Aloe barbadensis",
+      "description": "Less new after listen start strategy. Catch light it my base.",
+      "category": 4,
+      "dosage": "368mg daily",
+      "image_link": "https://example.com/herb7.jpg",
+      "tags": [
+        16,
+        14,
+        13
+      ],
+      "ailments": [
+        1,
+        14
+      ],
+      "side_effects": [
+        12,
+        14
+      ],
+      "symptoms": [
+        18,
+        16
+      ],
+      "illnesses": [
+        5,
+        19
+      ],
+      "sources": [
+        5,
+        6,
+        9
+      ],
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.herb",
+    "pk": 8,
+    "fields": {
+      "name": "Ashwagandha",
+      "slug": "ashwagandha",
+      "latin_name": "Withania somnifera",
+      "description": "Specific buy own capital move low middle. Month throughout citizen Congress.",
+      "category": 13,
+      "dosage": "545mg daily",
+      "image_link": "https://example.com/herb8.jpg",
+      "tags": [
+        15
+      ],
+      "ailments": [
+        9
+      ],
+      "side_effects": [
+        17,
+        19
+      ],
+      "symptoms": [
+        7,
+        9,
+        17
+      ],
+      "illnesses": [
+        14
+      ],
+      "sources": [
+        1,
+        7,
+        8
+      ],
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.herb",
+    "pk": 9,
+    "fields": {
+      "name": "Holy Basil",
+      "slug": "holy-basil",
+      "latin_name": "Ocimum sanctum",
+      "description": "System method argue.",
+      "category": 2,
+      "dosage": "785mg daily",
+      "image_link": "https://example.com/herb9.jpg",
+      "tags": [
+        16
+      ],
+      "ailments": [
+        2
+      ],
+      "side_effects": [
+        19,
+        12
+      ],
+      "symptoms": [],
+      "illnesses": [],
+      "sources": [
+        9
+      ],
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.herb",
+    "pk": 10,
+    "fields": {
+      "name": "Milk Thistle",
+      "slug": "milk-thistle",
+      "latin_name": "Silybum marianum",
+      "description": "Experience evidence particular yeah PM.",
+      "category": 5,
+      "dosage": "142mg daily",
+      "image_link": "https://example.com/herb10.jpg",
+      "tags": [
+        5,
+        13,
+        17,
+        15
+      ],
+      "ailments": [
+        12
+      ],
+      "side_effects": [
+        14
+      ],
+      "symptoms": [],
+      "illnesses": [
+        16
+      ],
+      "sources": [
+        9,
+        7
+      ],
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.herb",
+    "pk": 11,
+    "fields": {
+      "name": "St. John's Wort",
+      "slug": "st.-john's-wort",
+      "latin_name": "Hypericum perforatum",
+      "description": "Meet wife rest college what represent expert. Investment somebody blue.",
+      "category": 15,
+      "dosage": "297mg daily",
+      "image_link": "https://example.com/herb11.jpg",
+      "tags": [
+        4
+      ],
+      "ailments": [
+        20,
+        6,
+        9
+      ],
+      "side_effects": [
+        17
+      ],
+      "symptoms": [
+        14,
+        3
+      ],
+      "illnesses": [
+        19,
+        20
+      ],
+      "sources": [
+        1,
+        10
+      ],
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.herb",
+    "pk": 12,
+    "fields": {
+      "name": "Licorice Root",
+      "slug": "licorice-root",
+      "latin_name": "Glycyrrhiza glabra",
+      "description": "Sometimes hold light opportunity have ground rock.",
+      "category": 8,
+      "dosage": "569mg daily",
+      "image_link": "https://example.com/herb12.jpg",
+      "tags": [
+        14
+      ],
+      "ailments": [
+        3
+      ],
+      "side_effects": [
+        9,
+        19
+      ],
+      "symptoms": [],
+      "illnesses": [
+        10
+      ],
+      "sources": [
+        6,
+        8,
+        9
+      ],
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.herb",
+    "pk": 13,
+    "fields": {
+      "name": "Valerian Root",
+      "slug": "valerian-root",
+      "latin_name": "Valeriana officinalis",
+      "description": "Occur hospital accept final since make ask. Foreign plan challenge idea deal rule past.",
+      "category": 7,
+      "dosage": "962mg daily",
+      "image_link": "https://example.com/herb13.jpg",
+      "tags": [
+        16
+      ],
+      "ailments": [
+        6,
+        9,
+        11
+      ],
+      "side_effects": [
+        13,
+        11
+      ],
+      "symptoms": [
+        17,
+        20,
+        16
+      ],
+      "illnesses": [],
+      "sources": [
+        3,
+        6,
+        4
+      ],
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.herb",
+    "pk": 14,
+    "fields": {
+      "name": "Dandelion",
+      "slug": "dandelion",
+      "latin_name": "Taraxacum officinale",
+      "description": "Thing allow follow capital.",
+      "category": 12,
+      "dosage": "311mg daily",
+      "image_link": "https://example.com/herb14.jpg",
+      "tags": [
+        3,
+        8,
+        15
+      ],
+      "ailments": [
+        7
+      ],
+      "side_effects": [
+        10
+      ],
+      "symptoms": [],
+      "illnesses": [
+        7
+      ],
+      "sources": [
+        8
+      ],
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.herb",
+    "pk": 15,
+    "fields": {
+      "name": "Elderberry",
+      "slug": "elderberry",
+      "latin_name": "Sambucus nigra",
+      "description": "Avoid provide involve.",
+      "category": 14,
+      "dosage": "222mg daily",
+      "image_link": "https://example.com/herb15.jpg",
+      "tags": [
+        9,
+        3,
+        8
+      ],
+      "ailments": [
+        3,
+        18,
+        11
+      ],
+      "side_effects": [],
+      "symptoms": [],
+      "illnesses": [],
+      "sources": [
+        7,
+        4,
+        9
+      ],
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.herb",
+    "pk": 16,
+    "fields": {
+      "name": "Yarrow",
+      "slug": "yarrow",
+      "latin_name": "Achillea millefolium",
+      "description": "Budget look hear ask. Not pattern try reach product degree.",
+      "category": 7,
+      "dosage": "363mg daily",
+      "image_link": "https://example.com/herb16.jpg",
+      "tags": [
+        1
+      ],
+      "ailments": [
+        15,
+        14
+      ],
+      "side_effects": [],
+      "symptoms": [
+        17,
+        13
+      ],
+      "illnesses": [
+        14
+      ],
+      "sources": [
+        1,
+        6
+      ],
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.herb",
+    "pk": 17,
+    "fields": {
+      "name": "Skullcap",
+      "slug": "skullcap",
+      "latin_name": "Scutellaria lateriflora",
+      "description": "Through so agent well some event later. Spend drive television act.",
+      "category": 1,
+      "dosage": "993mg daily",
+      "image_link": "https://example.com/herb17.jpg",
+      "tags": [
+        10,
+        15,
+        14,
+        2
+      ],
+      "ailments": [
+        16,
+        13,
+        19
+      ],
+      "side_effects": [
+        2,
+        14
+      ],
+      "symptoms": [],
+      "illnesses": [],
+      "sources": [
+        5,
+        7,
+        8
+      ],
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.herb",
+    "pk": 18,
+    "fields": {
+      "name": "Lemon Balm",
+      "slug": "lemon-balm",
+      "latin_name": "Melissa officinalis",
+      "description": "Bed common consumer young civil. Ability detail itself blue.",
+      "category": 11,
+      "dosage": "184mg daily",
+      "image_link": "https://example.com/herb18.jpg",
+      "tags": [
+        12,
+        11,
+        15,
+        19
+      ],
+      "ailments": [
+        18,
+        15,
+        3
+      ],
+      "side_effects": [],
+      "symptoms": [
+        16
+      ],
+      "illnesses": [],
+      "sources": [
+        8,
+        6
+      ],
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.herb",
+    "pk": 19,
+    "fields": {
+      "name": "Feverfew",
+      "slug": "feverfew",
+      "latin_name": "Tanacetum parthenium",
+      "description": "Structure film act interesting exactly statement.",
+      "category": 7,
+      "dosage": "393mg daily",
+      "image_link": "https://example.com/herb19.jpg",
+      "tags": [
+        16,
+        17,
+        8,
+        5
+      ],
+      "ailments": [
+        14,
+        5,
+        11
+      ],
+      "side_effects": [
+        13
+      ],
+      "symptoms": [],
+      "illnesses": [
+        15
+      ],
+      "sources": [
+        3,
+        4,
+        5
+      ],
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  },
+  {
+    "model": "herbs.herb",
+    "pk": 20,
+    "fields": {
+      "name": "Nettle",
+      "slug": "nettle",
+      "latin_name": "Urtica dioica",
+      "description": "Source next war rest. Join occur property prepare.",
+      "category": 4,
+      "dosage": "763mg daily",
+      "image_link": "https://example.com/herb20.jpg",
+      "tags": [
+        7,
+        10,
+        9,
+        20
+      ],
+      "ailments": [
+        8,
+        20
+      ],
+      "side_effects": [
+        15
+      ],
+      "symptoms": [
+        2
+      ],
+      "illnesses": [],
+      "sources": [
+        3
+      ],
+      "created_at": "2025-07-06T14:28:35.574632",
+      "updated_at": "2025-07-06T14:28:35.574632",
+      "is_active": true
+    }
+  }
+]
