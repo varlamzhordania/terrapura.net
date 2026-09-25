@@ -3,14 +3,19 @@
     import {authState, setAuth} from '$lib/states/auth.svelte.js';
     import Fa from "svelte-fa";
     import {faExclamationCircle} from "@fortawesome/free-solid-svg-icons";
+    import {browser} from "$app/environment";
+    import {onMount} from "svelte";
+    import Spinner from "$lib/components/Spinner.svelte";
 
-    if (authState.logged_in)
+    if (authState.logged_in && browser) {
         goto('/')
+    }
 
-    let email = '';
-    let password = '';
-    let error = '';
-    let loading = false;
+    let email = $state('');
+    let password = $state('');
+    let error = $state('');
+    let loading = $state(false);
+    let redirectTo = $state('/');
 
     async function handleLogin(event) {
         event.preventDefault();
@@ -35,7 +40,7 @@
 
             setAuth({access_token: access_token, expire_in: expires_in, user: user})
 
-            goto("/")
+            goto(redirectTo)
 
         } catch (err) {
             error = err.message || 'Login failed';
@@ -43,6 +48,13 @@
             loading = false;
         }
     }
+
+    onMount(() => {
+        const urlParams = new URLSearchParams(window.location.search)
+        if (urlParams.has("redirectTo"))
+            redirectTo = urlParams.get("redirectTo")
+    })
+
 
 </script>
 
@@ -65,28 +77,28 @@
     {/if}
 
 
-    <h1 class="text-2xl font-bold mb-6 text-center">Login</h1>
+    <h1 class="text-3xl font-heading font-bold mb-6 text-center">Sign In</h1>
 
-    <form on:submit|preventDefault={handleLogin} class="space-y-4">
+    <form onsubmit={handleLogin} class="space-y-4">
         <div>
-            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+            <label for="email" class="form-control-label">Email</label>
             <input
                     id="email"
                     type="text"
                     bind:value={email}
                     required
-                    class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-primary-500"
+                    class="form-control-field"
             />
         </div>
 
         <div>
-            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+            <label for="password" class="form-control-label">Password</label>
             <input
                     id="password"
                     type="password"
                     bind:value={password}
                     required
-                    class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-primary-500"
+                    class="form-control-field"
             />
         </div>
         <button
@@ -94,12 +106,20 @@
                 class="btn btn-primary w-full"
                 disabled={loading}
         >
-            {loading ? 'Logging in...' : 'Login'}
+            {#if loading}
+                <Spinner/>
+            {:else}
+                Sign In
+            {/if}
         </button>
     </form>
 
     <div class="text-sm text-center mt-4 text-gray-500">
         Don’t have an account?
-        <a href="/register" class="text-primary-600 hover:underline">Register</a>
+        <a href="/auth/register" class="text-primary-600 font-medium hover:underline">register</a>
+    </div>
+    <div class="text-sm text-center mt-4 text-gray-500">
+        forgot password?
+        <a href="/auth/forgot-password" class="text-primary-600 font-medium hover:underline">reset password</a>
     </div>
 </div>

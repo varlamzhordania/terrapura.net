@@ -146,6 +146,7 @@
 {/snippet}
 
 <div class="grid grid-cols-1 lg:grid-cols-10 xl:grid-cols-12 gap-8 lg:gap-16">
+    <!-- Filters -->
     <aside class="col-span-1 lg:col-span-3 xl:col-span-2">
         <div class="flex flex-col gap-4 p-2">
 

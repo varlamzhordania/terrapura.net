@@ -1,5 +1,5 @@
 import {API_ENDPOINTS} from '$lib/config.js';
-import {fetchWithAuth} from "$lib/api/index.js";
+import {fetchWithAuth} from "$lib/api/index.svelte.js";
 
 export async function retrieveSelf(token) {
 

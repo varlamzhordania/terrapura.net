@@ -25,7 +25,7 @@
 	}
 </script>
 
-<div class="min-h-screen flex flex-col justify-center items-center px-6 text-center bg-white text-slate-800">
+<div class="min-h-screen flex flex-col justify-center items-center px-6 text-center text-slate-800">
 	<div class="text-7xl sm:text-9xl">{emoji}</div>
 	<h1 class="text-4xl font-bold mt-4">{status} – {title}</h1>
 	<p class="mt-2 text-lg text-slate-600 max-w-xl">{message}</p>

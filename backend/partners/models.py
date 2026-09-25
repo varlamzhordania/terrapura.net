@@ -126,13 +126,14 @@ class PartnerContact(BaseModel):
     def __str__(self):
         return f"{self.partner.name} ({self.type}: {self.value})"
 
+class StaffRoleChoices(models.TextChoices):
+    OWNER = 'owner', _('Owner')
+    ADMIN = 'admin', _('Admin')
+    MANAGER = 'manager', _('Manager')
+    VIEWER = 'viewer', _('Viewer')
+
 
 class PartnerStaff(BaseModel):
-    class StaffRoleChoices(models.TextChoices):
-        ADMIN = 'admin', _('Admin')
-        MANAGER = 'manager', _('Manager')
-        VIEWER = 'viewer', _('Viewer')
-
     partner = models.ForeignKey(
         Partner,
         on_delete=models.CASCADE,
@@ -163,11 +164,36 @@ class PartnerStaff(BaseModel):
         verbose_name_plural = _('Partner Staff')
         unique_together = ('partner', 'user')
         ordering = ['partner', 'role']
-        indexes = [models.Index(fields=['partner', 'role'])]
+        indexes = [
+            models.Index(fields=['partner', 'role']),
+            models.Index(fields=['user', 'role']),
+        ]
+        constraints = [
+            # ensure only one owner per partner
+            models.UniqueConstraint(
+                fields=['partner'],
+                condition=models.Q(role=StaffRoleChoices.OWNER),
+                name='unique_owner_per_partner'
+            ),
+        ]
 
     def __str__(self):
-        name = self.user.get_full_name() if self.user else _("Unknown User")
-        return f"{name} - {self.partner.name if self.partner else _('Unknown Partner')} ({self.get_role_display()})"
+        name = self.user.get_full_name() or _("Unknown User")
+        partner_name = self.partner.name if self.partner else _("Unknown Partner")
+        return f"{name} - {partner_name} ({self.get_role_display()})"
+
+    # --- Convenience methods ---
+    def is_owner(self) -> bool:
+        return self.role == self.StaffRoleChoices.OWNER
+
+    def is_admin(self) -> bool:
+        return self.role == self.StaffRoleChoices.ADMIN
+
+    def is_manager(self) -> bool:
+        return self.role == self.StaffRoleChoices.MANAGER
+
+    def is_viewer(self) -> bool:
+        return self.role == self.StaffRoleChoices.VIEWER
 
 
 class PartnerReview(BaseModel):

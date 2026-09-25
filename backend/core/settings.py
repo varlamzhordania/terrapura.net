@@ -92,7 +92,9 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'templates',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,7 +122,8 @@ if DB_ENGINE == "postgresql":
             'USER': env('DB_USER', default='myuser'),
             'PASSWORD': env('DB_PASSWORD', default='mypassword'),
             'HOST': env('DB_HOST', default='localhost'),
-            'PORT': env('DB_PORT', default='5432'),  # Default port for PostgreSQL
+            'PORT': env('DB_PORT', default='5432'),
+            # Default port for PostgreSQL
         }
     }
 elif DB_ENGINE == "mysql":
@@ -131,7 +134,8 @@ elif DB_ENGINE == "mysql":
             'USER': env("DB_USER", default='myuser'),
             'PASSWORD': env("DB_PASSWORD", default='mypassword'),
             'HOST': env("DB_HOST", default='localhost'),
-            'PORT': env("DB_PORT", default='3306'),  # Default port for MySQL
+            'PORT': env("DB_PORT", default='3306'),
+            # Default port for MySQL
         }
     }
 else:
@@ -183,7 +187,8 @@ PARLER_LANGUAGES = {
     ),
     'default': {
         'fallback': 'en',  # defaults to PARLER_DEFAULT_LANGUAGE_CODE
-        'hide_untranslated': False,  # the default; let .active_translations() return fallbacks too.
+        'hide_untranslated': False,
+        # the default; let .active_translations() return fallbacks too.
     }
 }
 
@@ -241,7 +246,7 @@ REST_FRAMEWORK = {
     #     'user': '1000/day',  # Limit authenticated users to 1000 requests per day
     # },
 
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'DEFAULT_PAGINATION_CLASS': 'core.pagination.CustomPageNumberPagination',
     'PAGE_SIZE': 25,
 
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
@@ -286,7 +291,8 @@ if not DEBUG:
             # 'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
             # 'LOCATION': env('MEMCACHE_HOST', default='127.0.0.1:11211'),
             "BACKEND": "django.core.cache.backends.redis.RedisCache",
-            'LOCATION': env("REDIS_HOST"),  # Use the REDIS_HOST environment variable
+            'LOCATION': env("REDIS_HOST"),
+            # Use the REDIS_HOST environment variable
         }
 
     }

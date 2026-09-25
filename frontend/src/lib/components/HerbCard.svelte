@@ -2,8 +2,8 @@
     let {data, limitToAddCart = false, shadow = false} = $props();
 
     const cardClasses = shadow
-        ? "card p-0 h-full bg-gray-200 shadow hover:shadow-lg hover:-translate-y-0.5"
-        : "card p-0 h-full bg-gray-200";
+        ? "card p-0 h-full bg-gray-100 shadow hover:shadow-lg hover:-translate-y-0.5"
+        : "card p-0 h-full bg-gray-100";
 
     const images = data?.medias?.filter(img => img.type === "IMAGE" && img.file)
     const thumbnailSrc = images?.filter(img => img.is_featured)

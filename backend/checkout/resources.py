@@ -2,10 +2,15 @@ from import_export import resources
 from .models import (
     Currency,
     ExchangeRate,
+    PaymentMethod,
     ShoppingCart,
     ShoppingCartItem,
-    Payment,
+    OrderPayment,
+    Order,
+    OrderItem,
+    OrderShipment,
 )
+
 
 class CurrencyResource(resources.ModelResource):
     class Meta:
@@ -15,6 +20,11 @@ class CurrencyResource(resources.ModelResource):
 class ExchangeRateResource(resources.ModelResource):
     class Meta:
         model = ExchangeRate
+
+
+class PaymentMethodResource(resources.ModelResource):
+    class Meta:
+        model = PaymentMethod
 
 
 class ShoppingCartResource(resources.ModelResource):
@@ -29,4 +39,19 @@ class ShoppingCartItemResource(resources.ModelResource):
 
 class PaymentResource(resources.ModelResource):
     class Meta:
-        model = Payment
+        model = OrderPayment
+
+
+class OrderResource(resources.ModelResource):
+    class Meta:
+        model = Order
+
+
+class OrderItemResource(resources.ModelResource):
+    class Meta:
+        model = OrderItem
+
+
+class OrderShipmentResource(resources.ModelResource):
+    class Meta:
+        model = OrderShipment

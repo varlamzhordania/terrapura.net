@@ -9,9 +9,6 @@ from .models import (
     InventoryPrice,
     InventoryTransactionLog,
     LowStockAlert,
-    Order,
-    OrderItem,
-    Shipment,
 )
 
 from .resources import (
@@ -20,9 +17,6 @@ from .resources import (
     InventoryPriceResource,
     InventoryTransactionLogResource,
     LowStockAlertResource,
-    OrderResource,
-    OrderItemResource,
-    ShipmentResource,
 )
 
 
@@ -91,40 +85,3 @@ class LowStockAlertAdmin(ExportMixin, VersionAdmin):
     search_fields = ('inventory_item__herb__name', 'inventory_item__base__name')
 
 
-class OrderItemInline(NestedStackedInline):
-    model = OrderItem
-    extra = 0
-    fields = ('inventory_item', 'quantity', 'quantity_unit', 'unit_price', 'total_price')
-    readonly_fields = ('total_price',)
-
-
-class ShipmentInline(NestedStackedInline):
-    model = Shipment
-    extra = 0
-    fields = ('tracking_number', 'carrier', 'status', 'shipped_at', 'delivered_at')
-
-
-@admin.register(Order)
-class OrderAdmin(ExportMixin, NestedModelAdmin, VersionAdmin):
-    resource_class = OrderResource
-    list_display = ('id', 'user', 'status', 'total_price', 'is_active', 'created_at', 'updated_at')
-    list_filter = ('status', 'is_active', 'created_at')
-    search_fields = ('user__email', 'notes')
-    inlines = [OrderItemInline, ShipmentInline]
-
-
-@admin.register(OrderItem)
-class OrderItemAdmin(ExportMixin, VersionAdmin):
-    resource_class = OrderItemResource
-    list_display = (
-    'order', 'inventory_item', 'quantity', 'quantity_unit', 'unit_price', 'total_price')
-    list_filter = ('order__status',)
-    search_fields = ('inventory_item__herb__name', 'order__user__email')
-
-
-@admin.register(Shipment)
-class ShipmentAdmin(ExportMixin, VersionAdmin):
-    resource_class = ShipmentResource
-    list_display = ('order', 'tracking_number', 'carrier', 'status', 'shipped_at', 'delivered_at')
-    list_filter = ('status', 'carrier')
-    search_fields = ('tracking_number', 'order__user__email')

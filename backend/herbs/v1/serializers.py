@@ -27,7 +27,7 @@ class CategorySerializer(serializers.ModelSerializer):
 class HerbMediaSerializer(serializers.ModelSerializer):
     class Meta:
         model = HerbMedia
-        fields = "__all__"
+        fields = ['file', 'is_featured', 'is_active', 'type']
 
 
 class HerbPreparationStepSerializer(serializers.ModelSerializer):
@@ -90,12 +90,16 @@ class HerbSerializer(serializers.ModelSerializer):
     tags = serializers.StringRelatedField(many=True, read_only=True)
     illnesses = serializers.StringRelatedField(many=True, read_only=True)
     symptoms = serializers.StringRelatedField(many=True, read_only=True)
-    side_effects = serializers.StringRelatedField(many=True, read_only=True)
+    side_effects = serializers.StringRelatedField(
+        many=True,
+        read_only=True
+    )
     medias = HerbMediaSerializer(many=True, read_only=True)
 
     class Meta:
         model = Herb
         fields = [
+            'id',
             'name',
             'slug',
             'latin_name',
@@ -123,7 +127,10 @@ class HerbSEOSerializer(serializers.ModelSerializer):
     sources = SourceSerializer(many=True, read_only=True)
     medias = HerbMediaSerializer(many=True, read_only=True)
     warnings = HerbWarningSerializer(many=True, read_only=True)
-    scientific_studies = ScientificStudySerializer(many=True, read_only=True)
+    scientific_studies = ScientificStudySerializer(
+        many=True,
+        read_only=True
+    )
 
     class Meta:
         model = Herb
@@ -146,3 +153,32 @@ class HerbSEOSerializer(serializers.ModelSerializer):
                      'warnings',
                      'scientific_studies',
                  ] + SEO_MODEL_FIELDS
+
+
+class HerbShortSerializer(serializers.ModelSerializer):
+    media = serializers.SerializerMethodField()
+    category = serializers.StringRelatedField(many=False, read_only=True)
+
+    class Meta:
+        model = Herb
+        fields = ['id', 'category', 'latin_name', 'name', 'slug', 'media']
+
+    def get_media(self, obj):
+        request = self.context.get('request')
+        queryset = obj.medias.filter(type=HerbMedia.TypeChoices.IMAGE)
+        thumbnail = queryset.filter(is_featured=True).first()
+
+        if thumbnail:
+            return HerbMediaSerializer(
+                thumbnail,
+                many=False,
+                context={"request": request}
+            ).data
+        elif len(queryset) > 0:
+            return HerbMediaSerializer(
+                queryset.first(),
+                many=False,
+                context={"request": request}
+            ).data
+        else:
+            return None

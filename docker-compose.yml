@@ -3,6 +3,7 @@ services:
     build:
       context: ./backend
     container_name: gunicorn
+    restart: unless-stopped
     command:
 #      bash -c "python manage.py makemigrations --noinput && python manage.py migrate --noinput && gunicorn -c conf/gunicorn_conf.py core.wsgi:application"
       bash -c "python manage.py makemigrations --noinput && python manage.py migrate --noinput && python manage.py runserver 0.0.0.0:8000"
@@ -23,6 +24,7 @@ services:
 #    build:
 #      context: ./backend
 #    container_name: daphne
+#    restart: unless-stopped
 #    command:
 ##      bash -c "daphne -b 0.0.0.0 -p 8001 core.asgi:application"
 #      bash -c "daphne -u /var/run/django.sock -b 0.0.0.0 -p 8001 core.asgi:application"
@@ -45,6 +47,7 @@ services:
       context: ./backend
     container_name: celery
     command: celery -A core worker --loglevel=info
+    restart: unless-stopped
     volumes:
       - ./backend:/home/terrapura
     depends_on:
@@ -54,6 +57,7 @@ services:
 #  nginx:
 #    image: nginx:alpine
 #    container_name: nginx
+#    restart: unless-stopped
 #    ports:
 #      - "1935:1935"   # RTMP
 ##      - "8080:80"     # HLS playback
@@ -70,17 +74,19 @@ services:
   redis:
     image: redis:8.0.2
     container_name: redis
+    restart: unless-stopped
 #    ports:
 #      - "6379:6379"
   memcached:
     image: memcached:alpine
     container_name: memcached
+    restart: unless-stopped
 #    ports:
 #      - "11211:11211"
   postgres:
     image: postgres:17
     container_name: postgres
-    restart: always
+    restart: unless-stopped
     volumes:
       - postgres_data:/var/lib/postgresql/data
 #    ports:

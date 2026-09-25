@@ -25,5 +25,59 @@
       "name": "British Pound",
       "symbol": "£"
     }
+  },
+  {
+    "model": "checkout.exchangerate",
+    "pk": 1,
+    "fields": {
+      "base_currency": 1,
+      "target_currency": 2,
+      "rate": "0.910000"
+    }
+  },
+  {
+    "model": "checkout.exchangerate",
+    "pk": 2,
+    "fields": {
+      "base_currency": 2,
+      "target_currency": 1,
+      "rate": "1.098901"
+    }
+  },
+  {
+    "model": "checkout.exchangerate",
+    "pk": 3,
+    "fields": {
+      "base_currency": 1,
+      "target_currency": 3,
+      "rate": "0.780000"
+    }
+  },
+  {
+    "model": "checkout.exchangerate",
+    "pk": 4,
+    "fields": {
+      "base_currency": 3,
+      "target_currency": 1,
+      "rate": "1.282051"
+    }
+  },
+  {
+    "model": "checkout.exchangerate",
+    "pk": 5,
+    "fields": {
+      "base_currency": 2,
+      "target_currency": 3,
+      "rate": "0.857143"
+    }
+  },
+  {
+    "model": "checkout.exchangerate",
+    "pk": 6,
+    "fields": {
+      "base_currency": 3,
+      "target_currency": 2,
+      "rate": "1.166667"
+    }
   }
 ]

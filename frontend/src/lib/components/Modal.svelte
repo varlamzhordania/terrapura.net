@@ -21,7 +21,7 @@
 
 {#if open}
     <div class="fixed inset-0 z-50 flex items-center justify-center px-4" transition:fade>
-        <button class="backdrop" onclick={onClose}></button>
+        <button class="backdrop" onclick={onClose} aria-label="modal-backdrop"></button>
         <div class={`bg-white rounded-xl shadow-lg relative w-full max-w-${sizeMap[size]} z-40 p-6`}>
             <button
                     class="absolute top-2 right-2 text-gray-400 hover:text-gray-700"

@@ -266,6 +266,10 @@
     </div>
 {/snippet}
 
+<svelte:head>
+    <title>Terrapura | international ecommerce</title>
+</svelte:head>
+
 <!-- Hero Section -->
 <section
         class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-8 gap-4 min-h-dvh md:min-h-[600px] lg:min-h-[900px] xl:min-h-dvh">
@@ -297,7 +301,7 @@
     </div>
     <div class="col-span-1 md:col-span-2 lg:col-span-4">
         <div class="md:mt-24 xl:mt-0">
-            <img src="/basket.jpg" alt="a wooden basket filled with herbs" class="bubble object-cover"/>
+            <enhanced:img src="/static/basket.jpg" alt="a wooden basket filled with herbs" class="bubble object-cover"/>
         </div>
     </div>
 </section>
@@ -318,7 +322,7 @@
 <!-- Featured Section -->
 <section class="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-10 xl:grid-cols-12 min-h-dvh gap-8 lg:gap-16 mt-64">
     <div class="col-span-1 md:col-span-2 lg:col-span-4 xl:col-span-3 flex flex-col gap-4">
-        <div class="card bg-gray-200 text-slate-900 shadow-none flex items-center justify-start gap-2">
+        <div class="card bg-gray-100 text-slate-900 shadow-none flex items-center justify-start gap-2">
             <Fa icon={faLeaf} size="lg"/>
             <p class="text-2xl font-bold font-heading">Special offers</p>
         </div>
@@ -337,7 +341,7 @@
 
         </div>
 
-        <div class="card py-6 bg-gray-200 flex flex-col justify-between items-center max-h-[450px]">
+        <div class="card py-6 bg-gray-100 flex flex-col justify-between items-center max-h-[450px]">
             <h3 class="font-heading font-bold text-xl text-slate-900  capitalize text-center">Herbal</h3>
             <p class="text-sm font-medium capitalize">By Herbalist</p>
             <div class="w-full flex justify-center">
@@ -352,7 +356,7 @@
         <CountdownCard deadline={new Date('2025-07-04T18:00:00')} showSeconds="{false}"/>
     </div>
     <div class="col-span-1 md:col-span-4 lg:col-span-6 xl:col-span-9 flex flex-col gap-4">
-        <div class="card bg-gray-200 text-slate-900 shadow-none flex justify-between items-center">
+        <div class="card bg-gray-100 text-slate-900 shadow-none flex justify-between items-center">
             <div class="flex items-center justify-start gap-2">
                 <Fa icon={faLeaf} size="lg"/>
                 <p class="text-2xl font-bold font-heading">
@@ -385,7 +389,7 @@
             {/each}
         </swiper-container>
 
-        <div class="card bg-gray-200 text-slate-900 shadow-none flex items-center justify-start gap-2">
+        <div class="card bg-gray-100 text-slate-900 shadow-none flex items-center justify-start gap-2">
             <Fa icon={faShoppingCart} size="lg"/>
             <p class="text-2xl font-bold font-heading">
                 Top Categories

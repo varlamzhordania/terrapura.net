@@ -21,9 +21,9 @@ export function loadAuthStateFromStorage() {
     authState.user = user ? JSON.parse(user) : null;
 }
 
-export function setAuth({access, refresh = null, expire_in = null, user = null}) {
-    authState.access_token = access;
-    authState.refresh_token = refresh;
+export function setAuth({access_token, refresh_token = null, expire_in = null, user = null}) {
+    authState.access_token = access_token;
+    authState.refresh_token = refresh_token;
     authState.expire_in = expire_in;
     authState.logged_in = true;
     authState.user = user;

@@ -1,7 +1,10 @@
+import {redirect} from "@sveltejs/kit";
 import {refreshToken, retrieveSelf} from "$lib/api/auth.js";
 import {AUTH_CLIENT_ID, AUTH_CLIENT_SECRET} from '$env/static/private';
 
-export async function load({cookies}) {
+const protectedRoutes = ['/account', '/seller', '/admin', '/checkout'];
+
+export async function load({cookies, url}) {
     let user = null;
 
     let access_token = cookies.get('access_token');
@@ -65,6 +68,21 @@ export async function load({cookies}) {
                 secure: true,
                 sameSite: 'Strict',
             });
+        }
+    }
+
+    // Route protection & role check
+    if (protectedRoutes.some(path => url.pathname.startsWith(path))) {
+        if (!user) {
+            throw redirect(302, `/auth/login?redirectTo=${url.pathname}`);
+        }
+
+        if (url.pathname.startsWith('/seller') && user.partner_staff === null) {
+            throw redirect(302, '/unauthorized'); // or '/' or some error page
+        }
+
+        if (url.pathname.startsWith('/admin') && user.role !== 'admin') {
+            throw redirect(302, '/unauthorized');
         }
     }
 

@@ -8,10 +8,12 @@ export async function fetchHerbs({
                                      search = '',
                                      ordering = '',
                                      pagination = true,
-                                     page = 1
+                                     page = 1,
+                                     page_size = 25,
                                  } = {}) {
     const params = new URLSearchParams();
     params.append("page", page)
+    params.append("page_size", page_size)
     if (category) params.append('category', category);
     if (tags) params.append('tags', tags);
     if (symptoms) params.append('symptoms', symptoms);
@@ -46,8 +48,8 @@ export async function fetchHerbDetail(slug) {
     return await res.json();
 }
 
-export async function fetchHerbOffers(slug) {
-    const res = await fetch(API_ENDPOINTS.herbs.herbOffers(slug));
+export async function fetchHerbOffers(slug, currency) {
+    const res = await fetch(API_ENDPOINTS.herbs.herbOffers(slug, currency));
 
     if (!res.ok) {
         let errDetail = `Failed to fetch offers for herb: ${slug}`;

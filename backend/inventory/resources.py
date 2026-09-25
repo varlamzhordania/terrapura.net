@@ -7,9 +7,6 @@ from .models import (
     InventoryPrice,
     InventoryTransactionLog,
     LowStockAlert,
-    Order,
-    OrderItem,
-    Shipment,
 )
 
 User = get_user_model()
@@ -40,16 +37,3 @@ class LowStockAlertResource(resources.ModelResource):
         model = LowStockAlert
 
 
-class OrderResource(resources.ModelResource):
-    class Meta:
-        model = Order
-
-
-class OrderItemResource(resources.ModelResource):
-    class Meta:
-        model = OrderItem
-
-
-class ShipmentResource(resources.ModelResource):
-    class Meta:
-        model = Shipment

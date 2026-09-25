@@ -11,12 +11,14 @@
     import {onMount} from "svelte";
     import {flip} from "svelte/animate"
     import {fetchHerbOffers} from "$lib/api/herbs.js";
-    import {formatCurrency} from "$lib/utils.js";
+    import {formatCurrency, inputSteps} from "$lib/utils.svelte.js";
     import {basket} from '$lib/states/basket.svelte.js';
     import Modal from "$lib/components/Modal.svelte";
+    import {configState} from "$lib/states/config.svelte.js";
 
     let {data} = $props();
     const images = data?.medias?.filter(img => img.type === "IMAGE" && img.file)
+    const thumbnail = images.filter(img => img.is_featured)
 
     register();
     let swiperThumbnail;
@@ -27,8 +29,8 @@
     let showFullDescription = $state(false)
     let descriptionClasses = $derived(showFullDescription ? 'relative prose prose-slate max-w-none overflow-hidden' : 'relative prose prose-slate max-w-none overflow-hidden after:absolute after:bottom-0 after:left-0 after:right-0 after:w-full after:h-8 after:bg-gradient-to-t after:from-white after:to-white/30')
 
-    const loadOffers = async () => {
-        offers = await fetchHerbOffers(data.slug)
+    const loadOffers = async (currency = "USD") => {
+        offers = await fetchHerbOffers(data.slug, currency)
     }
 
     const handleSelectOffer = (offer, price) => {
@@ -37,16 +39,11 @@
         showModal = true;
     }
 
-
     let showModal = $state(false);
     let quantity = $state(1);
     let unit = $derived(selectedOffer?.price.unit || 'unit');
+    let [step, min] = $derived(inputSteps(unit))
 
-    const WHOLE_UNITS = ['unit', 'bag', 'box', 'pack'];
-
-    // Set input constraints based on unit type
-    let step = $derived(WHOLE_UNITS.includes(unit) ? 1 : 0.01);
-    let min = $derived(step);
 
     function addToBasket() {
 
@@ -56,6 +53,8 @@
                 id: data.id,
                 name: data.name,
                 latin_name: data.name,
+                slug: data.slug,
+                media: thumbnail.length > 0 ? thumbnail[0] : images[0],
             },
             quantity
         })
@@ -70,12 +69,10 @@
         quantity = 1;
     }
 
-    $inspect(basket.state);
-    $inspect(selectedOffer);
 
     onMount(() => {
 
-        loadOffers()
+        loadOffers(configState.state.currency)
         Object.assign(swiperThumbnail, {
             slidesPerView: 1,
             spaceBetween: 10,
@@ -85,6 +82,11 @@
         });
         swiperThumbnail.initialize();
     })
+
+    $effect(() => {
+        loadOffers(configState.state.currency)
+    })
+
 
 </script>
 
@@ -146,7 +148,7 @@
                     </div>
                     <div class="flex justify-start items-center flex-wrap gap-2">
                         {#each data.tags as tag}
-                            <a href="/herbs?tags={tag.slug}" class="badge-neutral  hover:underline">{tag.name}</a>
+                            <a href="/herbs?tags={tag.slug}" class="badge badge-neutral  hover:underline">{tag.name}</a>
                         {/each}
                     </div>
                 </div>
@@ -162,7 +164,7 @@
 
                     <div class="flex justify-start items-center flex-wrap gap-2">
                         {#each data.sources as source}
-                            <a href={source.url} class="badge-neutral hover:underline">{source.name}</a>
+                            <a href={source.url} class="badge badge-neutral hover:underline">{source.name}</a>
                         {/each}
                     </div>
                 </div>
@@ -176,7 +178,7 @@
             <div class="flex justify-between items-center">
                 <h1 class="text-2xl font-bold text-slate-800">{data.name}</h1>
                 {#if data.category}
-                    <a href="/herbs?category={data.category.slug}" class="badge-info w-fit text-lg  hover:underline">
+                    <a href="/herbs?category={data.category.slug}" class="badge badge-info w-fit text-lg  hover:underline">
                         {data.category.name}
                     </a>
                 {/if}
@@ -291,8 +293,13 @@
                                     </span>
                                 </div>
                                 <div class="text-center flex items-center justify-start gap-1">
-                                    <p class="md:text-xl lg:text-2xl font-heading font-bold text-slate-800">{formatCurrency(price.price, price.currency.code)}{price.currency.code}</p>
-                                    <small class="text-xs">per {price.unit}</small>
+                                    <p class="md:text-xl lg:text-2xl font-heading font-bold text-slate-800">
+                                        {formatCurrency(price.converted_price || price.price, price.converted_currenc || price.currency.code)}
+                                        {price.converted_currency ? price.converted_currency : price.currency.code}
+                                    </p>
+                                    <small class="text-xs">
+                                        per {price.unit}
+                                    </small>
                                 </div>
                             </div>
                         </button>
@@ -300,7 +307,9 @@
                 {/each}
             </div>
         {:else}
-            <p class="text-sm text-gray-500 italic">No offers available for this herb at the moment.</p>
+            <p class="text-sm text-gray-500 italic">
+                No offers available for this herb at the moment.
+            </p>
         {/if}
     </div>
 
@@ -311,11 +320,19 @@
     {#if selectedOffer}
         <h3 class="text-xl font-semibold mb-2">Add to Basket</h3>
         <p class="text-gray-600 mb-4">
-            <strong>{selectedOffer.offer.base.partner}</strong> – {selectedOffer.offer.base.name}
+            <strong>
+                {selectedOffer.offer.base.partner}
+            </strong> – {selectedOffer.offer.base.name}
             - {selectedOffer.offer.base.country}<br>
-            Price: <strong>{formatCurrency(selectedOffer.price.price, selectedOffer.price.currency.code)}
-            per {selectedOffer.price.unit}</strong><br/>
-            Total Price: <strong>{formatCurrency(selectedOffer.price.price * quantity, selectedOffer.price.currency.code)}
+            Price:
+            <strong>
+                {formatCurrency(selectedOffer.price.converted_price || selectedOffer.price.price, selectedOffer.price.converted_currency || selectedOffer.price.currency.code)}
+                per {selectedOffer.price.unit}
+            </strong><br/>
+            Total Price:
+            <strong>
+                {formatCurrency((selectedOffer.price.converted_price || selectedOffer.price.price) * quantity,selectedOffer.price.converted_currency || selectedOffer.price.currency.code)}
+            </strong>
         </p>
 
         <div class="mb-4">

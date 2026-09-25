@@ -29,12 +29,11 @@ urlpatterns = [
     path('api/v1/account/', include('account.v1.urls', namespace='account-v1')),
     path('api/', include('main.urls', namespace='main')),
     path('api/v1/herbs/', include('herbs.v1.urls', namespace='herbs-v1')),
-    path('api/', include('partners.urls', namespace='partners')),
+    path('api/v1/partners/', include('partners.v1.urls', namespace='partners-v1')),
     path('api/', include('inventory.urls', namespace='inventory')),
-    path('api/', include('checkout.urls', namespace='checkout')),
+    path('api/v1/checkout/', include('checkout.v1.urls', namespace='checkout-v1')),
     path('api/', include('blog.urls', namespace='blog')),
     path('admin/', admin.site.urls),
-
 ]
 
 urlpatterns += [
